@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #faf6f0;
+            --pink: #b66f80;
+            --dark: #593d45;
+            --muted: #927b7d;
+            --border: #eadbd7;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+           
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 35px;
+            font-weight: bold;
+            color: var(--dark);
+            direction: ltr;
+        }
+
+        .logo span {
+            color: var(--pink);
+        }
+
+        .nav-note {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Main layout */
+        .container {
+            width: 85%;
+            max-width: 1050px;
+            min-height: 590px;
+            margin: 25px auto 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 15px 50px #593d4510;
+        }
+
+        /* Welcome side */
+        .welcome {
+            background: #f0e2df;
+            padding: 55px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .eyebrow {
+            color: var(--pink);
+            font-size: 11px;
+            letter-spacing: 3px;
+            direction: ltr;
+            text-align: right;
+        }
+
+        .welcome h1 {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            font-size: 43px;
+            line-height: 1.8;
+            margin: 18px 0;
+            color: var(--dark);
+        }
+
+        .welcome h1 span {
+            color: var(--pink);
+        }
+
+        .welcome p {
+            color: #80696c;
+            font-size: 14px;
+            line-height: 2.2;
+            max-width: 300px;
+        }
+
+        .decorative-line {
+            width: 65px;
+            height: 2px;
+            background: var(--pink);
+            margin: 25px 0;
+        }
+
+        .flower-mark {
+            position: absolute;
+            bottom: -65px;
+            left: -30px;
+            font-family: Georgia, serif;
+            font-size: 230px;
+            line-height: 1;
+            color: #d7b4b2;
+            opacity: 0.45;
+            pointer-events: none;
+        }
+
+        .welcome-small {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 11px;
+            color: #927b7d;
+            letter-spacing: 1px;
+        }
+
+        /* Form side */
+        .form-section {
+            padding: 45px 42px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-heading {
+            margin-bottom: 25px;
+        }
+
+        .form-heading h2 {
+            font-size: 27px;
+            margin-bottom: 5px;
+        }
+
+        .form-heading p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        .form-tabs {
+            display: flex;
+            gap: 25px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 25px;
+        }
+
+        .tab {
+            padding: 0 0 12px;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            color: #aa9999;
+            border: none;
+            border-bottom: 2px solid transparent;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            color: var(--pink);
+            border-bottom-color: var(--pink);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            margin-bottom: 17px;
+        }
+
+        .field label {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            background: #fdfbf9;
+            font-family: inherit;
+            font-size: 12px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .field input:focus {
+            border-color: var(--pink);
+        }
+
+        .field input::placeholder {
+            color: #b9a9a8;
+        }
+
+        .form-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            font-size: 11px;
+            margin: 0 0 22px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .remember input {
+            accent-color: var(--pink);
+        }
+
+        .text-link {
+            color: var(--pink);
+            text-decoration: none;
+        }
+
+        .submit-btn {
+            padding: 13px;
+            border: none;
+            border-radius: 9px;
+            background: var(--pink);
+            color: white;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #985568;
+        }
+
+        .bottom-note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 11px;
+            margin-top: 20px;
+            
+        }
+
+        footer {
+            text-align: center;
+            padding: 0 15px 20px;
+            color: #a89591;
+            font-size: 11px;
+        }
+
+        /* Mobile */
+        @media (max-width: 760px) {
+            .navbar {
+                padding: 17px 6%;
+            }
+
+            .container {
+                width: 91%;
+                grid-template-columns: 1fr;
+                margin: 10px auto 25px;
+            }
+
+            .welcome {
+                padding: 30px 25px;
+                min-height: 240px;
+            }
+
+            .welcome h1 {
+                font-size: 32px;
+                line-height: 1.6;
+            }
+
+            .welcome p {
+                font-size: 12px;
+            }
+
+            .flower-mark {
+                font-size: 140px;
+                bottom: -45px;
+            }
+
+            .welcome-small {
+                display: none;
+            }
+
+            .form-section {
+                padding: 32px 24px;
+            }
+
+            .form-heading h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">FLORA</div>
+        <div class="nav-note">   فلورا | أناقةٌ لمُناسباتك ..</div>
+    </header>
+    <main class="container">
+        <section class="welcome">    
+      <h1>
+    اخترنا الورد لنعبر عن شغفنا <br> ولنصنع لك تجربة تفوق الخيال<br>   
+</h1>
+            <div class="flower-mark">✿✿✿</div>
+        </section>
+        <section class="form-section">
+            <div class="form-heading">
+                <h2>أهلًا بك في فلورا!</h2>
+            </div>
+            <div class="form-tabs">
+                <button type="button" class="tab active">
+                    تسجيل الدخول
+                </button>
+            </div>
+            <!-- Login form -->
+            <form action="#" method="post">
+
+                <div class="field">
+                    <label for="email">بريدك الإلكتروني</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@outlook.sa"
+                        required
+                    >
+                </div>
+                <div class="field">
+                    <label for="password">كلمة المرور</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="أدخلي كلمة المرور"
+                        required
+                    >
+                </div>
+                <div class="form-options">
+                    <label class="remember">
+                        <input type="checkbox" name="remember">
+                        تذكرني
+                    </label>
+                   
+                </div>
+                <button type="submit" class="submit-btn">
+                   أبدأي رحلتك معنا
+                </button>
+
+            </form>
+        </section>
+    </main>
+    <footer>
+            © 2026 فلورا. جميع الحقوق محفوظة.
+    <br>
+        ❣ Made with LoVe by Floar Team ❣
+    </footer>
+</body>
+</html>

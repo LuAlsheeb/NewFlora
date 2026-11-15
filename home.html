@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #FDF9F5;
+            color: #3e2222;
+        }
+
+        /* البنر */
+        .hero {
+            width: 100%;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            background-image: url("images/flora-banner.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            width: 40%;
+            margin-right: auto;
+            margin-left: 8%;
+            text-align: center;
+        }
+
+        .hero-logo {
+            font-family: Georgia, serif;
+            font-size: clamp(55px, 8vw, 105px);
+            font-weight: normal;
+            color: #643E46;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(17px, 2.3vw, 29px);
+            color: #643E46;
+            line-height: 1.6;
+        }
+
+        /* التصنيفات */
+        .categories {
+            padding: 25px 6% 65px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #B65D72;
+        }
+
+        .section-heading h2 {
+            font-size: 30px;
+            font-weight: 500;
+            margin: 12px 0;
+        }
+
+        .flower-symbol {
+            color: #B65D72;
+            font-size: 20px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3,minmax(0, 1fr));
+            justify-content: center;
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .category-card {
+            background: white;
+            border: 1px solid #f1e8e5;
+            border-radius: 200px 200px 18px 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(80, 45, 45, 0.04);
+            
+        }
+
+        .category-image {
+            height: 360px;
+            width: 100%;  
+            overflow: hidden;
+            border-radius: 50% 50% 0 0 / 50% 50% 0 0;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .category-info {
+            padding: 18px 18px 20px;
+        }
+
+        .category-info h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .category-info p {
+            font-size: 12px;
+            color: #86716d;
+            line-height: 1.9;
+            min-height: 46px;
+        }
+
+        .arrow-btn {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #B65D72;
+            color: white;
+            text-decoration: none;
+            font-size: 19px;
+            margin-top: 10px;
+            margin-right: 0;
+        }
+        .category-info{
+            padding: 18px;
+            text-align: right;}
+        .category-info p{
+            min-height: 0;}
+        .arrow-btn:hover {
+            background: #9D4C60;
+        }
+
+        @media (max-width: 750px) {
+            .hero {
+                height: 300px;
+                background-position: 60% center;
+            }
+
+            .hero-content {
+                width: 55%;
+                margin-left: 3%;
+            }
+
+            .hero-logo {
+                font-size: 50px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-image {
+                height: 250px;
+            }
+
+            
+
+        }
+        footer {
+            text-align: center;
+            padding: 0 15px 20px;
+            color: #a89591;
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- البنر الرئيسي -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-logo">Flora</h1>
+                <p class="hero-subtitle">
+                    أجمل الورود لكل لحظة مميزة
+                </p>
+            </div>
+        </section>
+
+        <!-- تصنيفات الورود -->
+        <section class="categories">
+            <div class="section-heading">
+                <span class="eyebrow">تسوقي حسب التصنيف</span>
+                <h2>ورود لكل مناسبة</h2>
+                <span class="flower-symbol">&#10048;</span>
+            </div>
+
+            <div class="category-grid">
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/bulk.jpg" alt="ورود بالجملة">
+                    </div>
+                    <div class="category-info">
+                        <h3>ورود بالجملة</h3>
+                        <p>
+                            ورود طازجة بكميات كبيرة
+                            لتزيين مناسباتك واحتفالاتك الخاصة.
+                        </p>
+                        <a href="product.html" class="arrow-btn"
+                           aria-label="استكشفي الورود بالجملة">&larr;</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/bouquet.jpg" alt="باقات الورود">
+                    </div>
+                    <div class="category-info">
+                        <h3>باقات الورود</h3>
+                        <p>
+                            باقات ورد أنيقة ومنسقة بعناية
+                            لتناسب جميع مناسباتك السعيدة.
+                        </p>
+                        <a href="product.html" class="arrow-btn"
+                           aria-label="استكشفي باقات الورود">&larr;</a>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="category-image">
+                        <img src="images/gifts.jpg" alt="ورود مع هدايا">
+                    </div>
+                    <div class="category-info">
+                        <h3>ورود مع هدايا</h3>
+                        <p>
+                            أجمل الورود مع هدايا مميزة
+                            لتجعلي لحظات أحبائك لا تُنسى.
+                        </p>
+                        <a href="products.html" class="arrow-btn"
+                           aria-label="استكشفي الورود مع الهدايا">&larr;</a>
+                    </div>
+                </article>
+
+            </div>
+            <footer>
+                <br>
+            © 2026 فلورا. جميع الحقوق محفوظة.
+    <br>
+        ❣ Made with LoVe by Floar Team ❣
+    </footer>
+        </section>
+    </main>
+</body>
+</html>
