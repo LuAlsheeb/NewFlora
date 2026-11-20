@@ -142,7 +142,36 @@
             margin-bottom: 15px;
             font-size: 16px;
         }
+.coupon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
 
+.coupon input {
+    flex: 1;
+    min-width: 180px;
+    padding: 12px;
+    border: 1px solid #E8D5D7;
+    border-radius: 8px;
+    outline: none;
+}
+
+.coupon button {
+    padding: 12px 25px;
+    background: #B65D72;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.coupon small {
+    width: 100%;
+    color: #A8777B;
+    font-size: 12px;
+}
         .total {
             border-top: 1px solid #F0D9DC;
             padding-top: 18px;
@@ -408,6 +437,12 @@
                 <span>الخصم</span>
                 <span>0 ر.س</span>
             </div>
+
+<div class="coupon">
+    <input type="text" placeholder="أدخل كود الخصم">
+    <button type="button">تطبيق</button>
+    <small>استخدمي FLORA10 واحصلي على خصم 10% من طلبك!</small>
+</div>
 
             <div class="summary-row total">
                 <span>الإجمالي</span>
