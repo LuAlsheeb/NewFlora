@@ -1,11 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>سلة التسوق | Flora</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -17,12 +21,27 @@
             background-color: #FDF9F5;
             color: #55434A;
         }
-
+        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 50px auto;
         }
+        .topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 7%;
+  background: #fffdfa;
+  border-bottom: 1px solid #efe7e0;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  color: #9b6c75;
+  text-decoration: none;
+}
 
         .page-title {
             text-align: center;
@@ -60,6 +79,8 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(100, 60, 70, 0.08);
             transition: 0.3s;
+            text-align: center;
+            padding: 20px;
         }
 
         .product-card:hover {
@@ -123,6 +144,15 @@
             font-size: 13px;
         }
 
+        .empty-cart {
+            grid-column: 1 / -1;
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            color: #8A747B;
+        }
+
         .order-summary {
             background: white;
             border-radius: 15px;
@@ -142,36 +172,38 @@
             margin-bottom: 15px;
             font-size: 16px;
         }
-.coupon {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px 0;
-}
 
-.coupon input {
-    flex: 1;
-    min-width: 180px;
-    padding: 12px;
-    border: 1px solid #E8D5D7;
-    border-radius: 8px;
-    outline: none;
-}
+        .coupon {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
 
-.coupon button {
-    padding: 12px 25px;
-    background: #B65D72;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
+        .coupon input {
+            flex: 1;
+            min-width: 180px;
+            padding: 12px;
+            border: 1px solid #E8D5D7;
+            border-radius: 8px;
+            outline: none;
+        }
 
-.coupon small {
-    width: 100%;
-    color: #A8777B;
-    font-size: 12px;
-}
+        .coupon button {
+            padding: 12px 25px;
+            background: #B65D72;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .coupon small {
+            width: 100%;
+            color: #A8777B;
+            font-size: 12px;
+        }
+
         .total {
             border-top: 1px solid #F0D9DC;
             padding-top: 18px;
@@ -199,10 +231,11 @@
 
         footer {
             text-align: center;
-            padding: 0 15px 20px;
+            padding: 30px 15px 20px;
             color: #a89591;
             font-size: 11px;
         }
+
         @media (max-width: 900px) {
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -223,242 +256,120 @@
                 font-size: 28px;
             }
         }
+    .home-link {
+      font-size: 14px;
+      padding: 11px 18px;
+      border: 1px solid #e2c6c7;
+      border-radius: 40px;
+      text-decoration: none;
+      color:inherit;
+      
+    }
+
+    .product-card {
+    background: #fffdfa;
+     border: 1px solid #efe7e0;
+    border-radius: 20px;
+}
+
+.product-card:hover {
+  background: #f5e8e8;
+}
+
+
     </style>
 </head>
 
 <body>
+<header class="topbar">
+  <a href="home.html" class="logo">FLORA</a>
+  <a href="home.html" class="home-link">العودة للرئيسية ←</a>
+    </header>
+    
+        <main class="container">
 
-    <main class="container">
-
+        <!-- عنوان الصفحة -->
         <div class="page-title">
-            <h1>سلة التسوق </h1>
-            <p>كل ما اخترتيه من زهورنا الجميلة في مكان واحد</p>
+
+            <h1>سلة التسوق</h1>
+
+            <p>تحقق من منتجاتك المختارة وقم بإتمام طلبك</p>
+
         </div>
 
-        <!-- ورود بالجملة -->
-        <h2 class="section-title">🌷 ورود بالجملة</h2>
+
+        <!-- المنتجات المختارة -->
+        <h2 class="section-title">
+             منتجاتك المختارة
+        </h2>
 
         <div class="products-grid" id="cartItems">
 
-            <div class="product-card">
-                <img src="images/flower2.png" alt="ورود أقحوان">
-                <div class="product-info">
-                    <h3>ورود أقحوان بالجملة</h3>
-                    <p class="price">120 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="images/flower3.png" alt="ورود جوري">
-                <div class="product-info">
-                    <h3>ورود جوري بالجملة</h3>
-                    <p class="price">150 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="images/flower4.png" alt="ورود ليليوم">
-                <div class="product-info">
-                    <h3>ورود ليليوم بالجملة</h3>
-                    <p class="price">130 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="images/flower1.png" alt="ورود توليب">
-                <div class="product-info">
-                    <h3>ورود توليب بالجملة</h3>
-                    <p class="price">100 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
+            <!-- JavaScript سيعرض المنتجات هنا -->
 
         </div>
 
-        <!-- باقات الورد -->
-        <h2 class="section-title">💐 باقات الورد</h2>
-
-        <div class="products-grid">
-
-            <div class="product-card">
-                <img src="images/flower5.png" alt="باقة التوليب الأبيض">
-                <div class="product-info">
-                    <h3>باقة التوليب الأبيض</h3>
-                    <p class="price">110 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="images/flower6.png" alt="باقة الجوري الأحمر">
-                <div class="product-info">
-                    <h3>باقة الجوري الأحمر</h3>
-                    <p class="price">180 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="images/flower7.png" alt="باقة الليليوم الوردي">
-                <div class="product-info">
-                    <h3>باقة الليليوم الوردي</h3>
-                    <p class="price">140 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="images/flower8.png" alt="باقة دوار الشمس">
-                <div class="product-info">
-                    <h3>باقة دوار الشمس</h3>
-                    <p class="price">125 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- ورود مع هدايا -->
-        <h2 class="section-title">🎁 ورود مع هدايا</h2>
-
-        <div class="products-grid">
-
-            <div class="product-card">
-                <img src="images/flower9.jpg" alt="ورد مع كيك">
-                <div class="product-info">
-                    <h3>ورد مع كيك</h3>
-                    <p class="price">200 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="images/flower10.jpg" alt="ورد مع شوكولاتة">
-                <div class="product-info">
-                    <h3>ورد مع شوكولاتة</h3>
-                    <p class="price">190 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="images/flower11.jpg" alt="ورد مع مجوهرات">
-                <div class="product-info">
-                    <h3>ورد مع مجوهرات</h3>
-                    <p class="price">250 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="images/flower12.jpg" alt="ورد مع عطر">
-                <div class="product-info">
-                    <h3>ورد مع عطر</h3>
-                    <p class="price">220 ر.س</p>
-                    <div class="quantity">
-                        <button>+</button>
-                        <span>1</span>
-                        <button>−</button>
-                    </div>
-                    <button class="remove-btn">حذف المنتج</button>
-                </div>
-            </div>
-
-        </div>
 
         <!-- ملخص الطلب -->
         <div class="order-summary">
+
             <h2>ملخص الطلب</h2>
 
             <div class="summary-row">
+
                 <span>المجموع الفرعي</span>
-                <span>1815 ر.س</span>
+
+                <span id="subtotal">0 ر.س</span>
+
             </div>
+
 
             <div class="summary-row">
+
                 <span>الخصم</span>
-                <span>0 ر.س</span>
+
+                <span id="discount">0 ر.س</span>
+
             </div>
 
-<div class="coupon">
-    <input type="text" placeholder="أدخل كود الخصم">
-    <button type="button">تطبيق</button>
-    <small>استخدمي FLORA10 واحصلي على خصم 10% من طلبك!</small>
-</div>
 
+            <!-- كود الخصم -->
+            <div class="coupon">
+
+                <input
+                    type="text"
+                    id="couponCode"
+                    placeholder="أدخل كود الخصم"
+                >
+
+                <button type="button" onclick="applyCoupon()">
+                    تطبيق
+                </button>
+
+                <small>
+                    استخدمي FLORA10 واحصلي على خصم 10% من طلبك!
+                </small>
+
+                <small id="couponMessage"></small>
+            </div>
+            <!-- الإجمالي -->
             <div class="summary-row total">
                 <span>الإجمالي</span>
-                <span>1815 ر.س</span>
+                <span id="total">0 ر.س</span>
             </div>
-
-            <button class="checkout-btn">إتمام الطلب</button>
+            <button class="checkout-btn" onclick="checkout()">
+                إتمام الطلب
+            </button>
         </div>
-
     </main>
-
+    <!-- Footer -->
     <footer>
-            © 2026 فلورا. جميع الحقوق محفوظة.
-    <br>
-        ❣ Made with LoVe by Floar Team ❣
+        © 2026 فلورا. جميع الحقوق محفوظة.
+        <br>
+        ❣  Made with LoVe by Flora Team ❣
     </footer>
+    <!-- JavaScript -->
     <script src="script.js"></script>
+
 </body>
 </html>

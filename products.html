@@ -39,12 +39,13 @@
       color: #9b6c75;
     }
 
-    .home-link {
+     .home-link {
       font-size: 14px;
       padding: 11px 18px;
       border: 1px solid #e2c6c7;
       border-radius: 40px;
     }
+    
 
     /* ===== المحتوى ===== */
     main {
@@ -203,18 +204,14 @@
 <body>
 
   <header class="topbar">
-    <a class="logo" href="home.html">Flora</a>
+    <a class="logo" href="home.html">FLORA</a>
+    <div style="display: flex; gap: 12px; align-items: center;">
+
+<a class="home-link" href="cartt.html">🛒 </a>
     <a class="home-link" href="home.html">العودة للرئيسية ←</a>
   </header>
 
   <main>
-
-    <nav class="categories">
-      <a class="category-btn" href="#wholesale">ورود بالجملة</a>
-      <a class="category-btn" href="#bouquets">باقات الورد</a>
-      <a class="category-btn" href="#gifts">ورود مع هدايا</a>
-    </nav>
-
     <section class="product-section" id="wholesale">
       <div class="section-heading">
         <h2>ورود بالجملة</h2>
@@ -222,179 +219,144 @@
       </div>
       <div class="grid">
 
-        <div class="card">
-          <img src="images/flower1.png" alt="ورود توليب بالجملة">
-          <div class="card-content">
-            <h3>ورود توليب بالجملة</h3>
-            <p class="price">180 ر.س</p>
-            <button class="add-btn" 
-            data-name="ورود توليب بالجملة"
-            data-price="180"
-            onclick="addToCart('ورود توليب بالجملة', 180)">إضافة إلى السلة
-          </button>
-          </div>
-        </div>
+       
+<div class="card">
+  <img src="images/flower1.png" alt="ورود توليب بالجملة">
+  <div class="card-content">
+    <h3>ورود توليب بالجملة</h3>
+    <p class="price">180 ر.س</p>
+    <button class="add-btn" onclick="addToCart('ورود توليب بالجملة', 180, 'images/flower1.png')">إضافة إلى السلة</button>
+  </div>
+</div>
 
-        <div class="card">
-          <img src="images/flower2.png" alt="ورود اقحوان بالجملة">
-          <div class="card-content">
-            <h3>ورود اقحوان بالجملة</h3>
-            <p class="price">145 ر.س</p>
-            <button class="add-btn"
-             data-name="ورود اقحوان بالجملة"
-            data-price="145"
-            onclick="addToCart('ورود اقحوان بالجملة', 145)">إضافة إلى السلة</button>
-          </div>
-        </div>
+<div class="card">
+  <img src="images/flower2.png" alt="ورود اقحوان بالجملة">
+  <div class="card-content">
+    <h3>ورود اقحوان بالجملة</h3>
+    <p class="price">145 ر.س</p>
+    <button class="add-btn" onclick="addToCart('ورود اقحوان بالجملة', 145, 'images/flower2.png')">إضافة إلى السلة</button>
+  </div>
+</div>
 
-        <div class="card">
-          <img src="images/flower3.png" alt="ورود جوري بالجملة">
-          <div class="card-content">
-            <h3>ورود جوري بالجملة</h3>
-            <p class="price">120 ر.س</p>
-            <button class="add-btn" data-name="ورود جوري بالجملة"
-            data-price="120"
-            onclick="addToCart('ورود جوري بالجملة', 120)">إضافة إلى السلة</button>
-          </div>
-        </div>
+<div class="card">
+  <img src="images/flower3.png" alt="ورود جوري بالجملة">
+  <div class="card-content">
+    <h3>ورود جوري بالجملة</h3>
+    <p class="price">120 ر.س</p>
+    <button class="add-btn" onclick="addToCart('ورود جوري بالجملة', 120, 'images/flower3.png')">إضافة إلى السلة</button>
+  </div>
+</div>
 
-        <div class="card">
-          <img src="images/flower4.png" alt="ورود ليليوم بالجملة">
-          <div class="card-content">
-            <h3>ورود ليليوم بالجملة</h3>
-            <p class="price">170 ر.س</p>
-            <button class="add-btn" data-name="ورود ليليوم بالجملة"
-            data-price="170"
-            onclick="addToCart('ورود ليليوم بالجملة', 170)">إضافة إلى السلة</button>
-          </div>
-        </div>
+<div class="card">
+  <img src="images/flower4.png" alt="ورود ليليوم بالجملة">
+  <div class="card-content">
+    <h3>ورود ليليوم بالجملة</h3>
+    <p class="price">170 ر.س</p>
+    <button class="add-btn" onclick="addToCart('ورود ليليوم بالجملة', 170, 'images/flower4.png')">إضافة إلى السلة</button>
+  </div>
+</div>
 
+</div>
+</section>
+
+<section class="product-section" id="bouquets">
+  <div class="section-heading">
+    <h2>باقات الورد</h2>
+    <span class="flower-mark">✿</span>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <img src="images/flower5.png" alt="باقة التوليب الابيض">
+      <div class="card-content">
+        <h3>باقة التوليب الابيض</h3>
+        <p class="price">150 ر.س</p>
+        <button class="add-btn" onclick="addToCart('باقة التوليب الابيض', 150, 'images/flower5.png')">إضافة إلى السلة</button>
       </div>
-    </section>
+    </div>
 
-    <section class="product-section" id="bouquets">
-      <div class="section-heading">
-        <h2>باقات الورد</h2>
-        <span class="flower-mark">✿</span>
+    <div class="card">
+      <img src="images/flower6.png" alt="باقة الجوري الأحمر">
+      <div class="card-content">
+        <h3>باقة الجوري الأحمر</h3>
+        <p class="price">150 ر.س</p>
+        <button class="add-btn" onclick="addToCart('باقة الجوري الأحمر', 150, 'images/flower6.png')">إضافة إلى السلة</button>
       </div>
-      <div class="grid">
+    </div>
 
-        <div class="card">
-          <img src="images/flower5.png" alt="باقة التوليب الابيض">
-          <div class="card-content">
-            <h3>باقة التوليب الابيض</h3>
-            <p class="price">150 ر.س</p>
-            <button class="add-btn" 
-            data-name="باقة التوليب الابيض" 
-            data-price="150"
-            onclick="addToCart('باقة التوليب الابيض', 150)">إضافة إلى السلة
-          </button>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="images/flower6.png" alt="باقة الجوري الأحمر">
-          <div class="card-content">
-            <h3>باقة الجوري الأحمر</h3>
-            <p class="price">150 ر.س</p>
-            <button class="add-btn" 
-            data-name="باقة الجوري الأحمر" 
-            data-price="150"
-            onclick="addToCart('باقة الجوري الأحمر', 150)">إضافة إلى السلة
-          </button>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="images/flower7.png" alt="باقة الليليوم الوردي">
-          <div class="card-content">
-            <h3>باقة الليليوم الوردي</h3>
-            <p class="price">200 ر.س</p>
-            <button class="add-btn" 
-            data-name="باقة الليليوم الوردي" 
-            data-price="200"
-            onclick="addToCart('باقة الليليوم الوردي', 200)">إضافة إلى السلة
-          </button>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="images/flower8.png" alt="باقة دوار الشمس">
-          <div class="card-content">
-            <h3>باقة دوار الشمس</h3>
-            <p class="price">130 ر.س</p>
-            <button class="add-btn" 
-            data-name="باقة دوار الشمس" 
-            data-price="130"
-            onclick="addToCart('باقة دوار الشمس', 130)">إضافة إلى السلة</button>
-          </div>
-        </div>
-
+    <div class="card">
+      <img src="images/flower7.png" alt="باقة الليليوم الوردي">
+      <div class="card-content">
+        <h3>باقة الليليوم الوردي</h3>
+        <p class="price">200 ر.س</p>
+        <button class="add-btn" onclick="addToCart('باقة الليليوم الوردي', 200, 'images/flower7.png')">إضافة إلى السلة</button>
       </div>
-    </section>
+    </div>
 
-    <section class="product-section" id="gifts">
-      <div class="section-heading">
-        <h2>ورود مع هدايا</h2>
-        <span class="flower-mark">✿</span>
+    <div class="card">
+      <img src="images/flower8.png" alt="باقة دوار الشمس">
+      <div class="card-content">
+        <h3>باقة دوار الشمس</h3>
+        <p class="price">130 ر.س</p>
+        <button class="add-btn" onclick="addToCart('باقة دوار الشمس', 130, 'images/flower8.png')">إضافة إلى السلة</button>
       </div>
-      <div class="grid">
+    </div>
 
-        <div class="card">
-          <img src="images/flower9.jpg" alt="ورد مع كيك">
-          <div class="card-content">
-            <h3>ورد مع كيك</h3>
-            <p class="price">240 ر.س</p>
-            <button class="add-btn" 
-            data-name="ورد مع كيك" 
-            data-price="240">إضافة إلى السلة
-          </button>
-          </div>
-        </div>
+  </div>
+</section>
 
-        <div class="card">
-          <img src="images/flower10.jpg" alt="ورد مع شوكولاتة">
-          <div class="card-content">
-            <h3>ورد مع شوكولاتة</h3>
-            <p class="price">210 ر.س</p>
-            <button class="add-btn" 
-            data-name="ورد مع شوكولاتة" 
-            data-price="210">إضافة إلى السلة</button>
-          </div>
-        </div>
+<section class="product-section" id="gifts">
+  <div class="section-heading">
+    <h2>ورود مع هدايا</h2>
+    <span class="flower-mark">✿</span>
+  </div>
+  <div class="grid">
 
-        <div class="card">
-          <img src="images/flower11.jpg" alt="ورد مع مجوهرات">
-          <div class="card-content">
-            <h3>ورد مع مجوهرات</h3>
-            <p class="price">320 ر.س</p>
-            <button class="add-btn" 
-            data-name="ورد مع مجوهرات" 
-            data-price="320">إضافة إلى السلة</button>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="images/flower12.jpg" alt="ورد مع عطر">
-          <div class="card-content">
-            <h3>ورد مع عطر</h3>
-            <p class="price">280 ر.س</p>
-            <button class="add-btn" 
-            data-name="ورد مع عطر" 
-            data-price="280" 
-            onclick="addToCart('ورد مع عطر', 280)">إضافة إلى السلة</button>
-          </div>
-        </div>
-
+    <div class="card">
+      <img src="images/flower9.jpg" alt="ورد مع كيك">
+      <div class="card-content">
+        <h3>ورد مع كيك</h3>
+        <p class="price">240 ر.س</p>
+        <button class="add-btn" onclick="addToCart('ورد مع كيك', 240, 'images/flower9.jpg')">إضافة إلى السلة</button>
       </div>
-    </section>
+    </div>
 
-  </main>
+    <div class="card">
+      <img src="images/flower10.jpg" alt="ورد مع شوكولاتة">
+      <div class="card-content">
+        <h3>ورد مع شوكولاتة</h3>
+        <p class="price">210 ر.س</p>
+        <button class="add-btn" onclick="addToCart('ورد مع شوكولاتة', 210, 'images/flower10.jpg')">إضافة إلى السلة</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/flower11.jpg" alt="ورد مع مجوهرات">
+      <div class="card-content">
+        <h3>ورد مع مجوهرات</h3>
+        <p class="price">320 ر.س</p>
+        <button class="add-btn" onclick="addToCart('ورد مع مجوهرات', 320, 'images/flower11.jpg')">إضافة إلى السلة</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="images/flower12.jpg" alt="ورد مع عطر">
+      <div class="card-content">
+        <h3>ورد مع عطر</h3>
+        <p class="price">280 ر.س</p>
+        <button class="add-btn" onclick="addToCart('ورد مع عطر', 280, 'images/flower12.jpg')">إضافة إلى السلة</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
 
   <footer>
     © 2026 فلورا. جميع الحقوق محفوظة.
     <br>
-    ❣️Made with Love by Flora Team❣️
+    ❣  Made with Love by Flora Team ❣
   </footer>
   
 <script src="script.js"></script>
