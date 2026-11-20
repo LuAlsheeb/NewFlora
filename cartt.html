@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة التسوق | Flora</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #FDF9F5;
+            color: #55434A;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title h1 {
+            color: #B65D72;
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .page-title p {
+            color: #8A747B;
+            font-size: 16px;
+        }
+
+        .section-title {
+            color: #B65D72;
+            font-size: 23px;
+            margin: 35px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #F0D9DC;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(100, 60, 70, 0.08);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 20px rgba(100, 60, 70, 0.13);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 16px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+            color: #55434A;
+        }
+
+        .price {
+            color: #B65D72;
+            font-weight: bold;
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        .quantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .quantity button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 50%;
+            background: #F8E9E8;
+            color: #B65D72;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .quantity span {
+            font-weight: bold;
+        }
+
+        .remove-btn {
+            border: none;
+            background: transparent;
+            color: #A8777B;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .order-summary {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 45px;
+            box-shadow: 0 4px 15px rgba(100, 60, 70, 0.08);
+        }
+
+        .order-summary h2 {
+            color: #B65D72;
+            margin-bottom: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .total {
+            border-top: 1px solid #F0D9DC;
+            padding-top: 18px;
+            margin-top: 18px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #B65D72;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background: #B65D72;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background: #98485D;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0 15px 20px;
+            color: #a89591;
+            font-size: 11px;
+        }
+        @media (max-width: 900px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                width: 94%;
+                margin-top: 30px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="page-title">
+            <h1>سلة التسوق </h1>
+            <p>كل ما اخترتيه من زهورنا الجميلة في مكان واحد</p>
+        </div>
+
+        <!-- ورود بالجملة -->
+        <h2 class="section-title">🌷 ورود بالجملة</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="images/IMG_6783.JPG" alt="ورود أقحوان">
+                <div class="product-info">
+                    <h3>ورود أقحوان بالجملة</h3>
+                    <p class="price">120 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/IMG_6784.JPG" alt="ورود جوري">
+                <div class="product-info">
+                    <h3>ورود جوري بالجملة</h3>
+                    <p class="price">150 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/IMG_6785.JPG" alt="ورود ليليوم">
+                <div class="product-info">
+                    <h3>ورود ليليوم بالجملة</h3>
+                    <p class="price">130 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/IMG_6786.JPG" alt="ورود توليب">
+                <div class="product-info">
+                    <h3>ورود توليب بالجملة</h3>
+                    <p class="price">100 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- باقات الورد -->
+        <h2 class="section-title">💐 باقات الورد</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="images/IMG_6787.JPG" alt="باقة التوليب الأبيض">
+                <div class="product-info">
+                    <h3>باقة التوليب الأبيض</h3>
+                    <p class="price">110 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/IMG_6788.JPG" alt="باقة الجوري الأحمر">
+                <div class="product-info">
+                    <h3>باقة الجوري الأحمر</h3>
+                    <p class="price">180 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/IMG_6789.JPG" alt="باقة الليليوم الوردي">
+                <div class="product-info">
+                    <h3>باقة الليليوم الوردي</h3>
+                    <p class="price">140 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/IMG_6790.JPG" alt="باقة دوار الشمس">
+                <div class="product-info">
+                    <h3>باقة دوار الشمس</h3>
+                    <p class="price">125 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ورود مع هدايا -->
+        <h2 class="section-title">🎁 ورود مع هدايا</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="images/IMG_6791.JPG" alt="ورد مع كيك">
+                <div class="product-info">
+                    <h3>ورد مع كيك</h3>
+                    <p class="price">200 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/IMG_6792.JPG" alt="ورد مع شوكولاتة">
+                <div class="product-info">
+                    <h3>ورد مع شوكولاتة</h3>
+                    <p class="price">190 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/IMG_6793.JPG" alt="ورد مع مجوهرات">
+                <div class="product-info">
+                    <h3>ورد مع مجوهرات</h3>
+                    <p class="price">250 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/IMG_6794.JPG" alt="ورد مع عطر">
+                <div class="product-info">
+                    <h3>ورد مع عطر</h3>
+                    <p class="price">220 ر.س</p>
+                    <div class="quantity">
+                        <button>+</button>
+                        <span>1</span>
+                        <button>−</button>
+                    </div>
+                    <button class="remove-btn">حذف المنتج</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ملخص الطلب -->
+        <div class="order-summary">
+            <h2>ملخص الطلب</h2>
+
+            <div class="summary-row">
+                <span>المجموع الفرعي</span>
+                <span>1815 ر.س</span>
+            </div>
+
+            <div class="summary-row">
+                <span>الخصم</span>
+                <span>0 ر.س</span>
+            </div>
+
+            <div class="summary-row total">
+                <span>الإجمالي</span>
+                <span>1815 ر.س</span>
+            </div>
+
+            <button class="checkout-btn">إتمام الطلب</button>
+        </div>
+
+    </main>
+
+    <footer>
+            © 2026 فلورا. جميع الحقوق محفوظة.
+    <br>
+        ❣ Made with LoVe by Floar Team ❣
+    </footer>
+    
+</body>
+</html>
+```
