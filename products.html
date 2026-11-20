@@ -4,337 +4,362 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flora | المنتجات</title>
+
   <style>
-    :root { --cream:#faf8f4; 
-        --pink:#bf7787;
-         --pink-dark:#925465;
-          --beige:#ead7c8; 
-          --ink:#685450; 
+    /* ===== الإعدادات العامة ===== */
+    * {
+      box-sizing: border-box;
     }
 
-    * {
-         box-sizing:border-box;
-         }
-    body { 
-        margin:0; 
-        background:var(--cream); 
-        color:var(--ink); 
-        font-family:Tahoma, Arial, sans-serif; 
+    body {
+      margin: 0;
+      background: #faf8f4;
+      color: #685450;
+      font-family: Tahoma, Arial, sans-serif;
     }
-    a { 
-        color:inherit;
-         text-decoration:none;
-         }
-    .topbar { 
-        padding:20px 7%; 
-        display:flex; align-items:center; 
-        justify-content:space-between;
-         border-bottom:1px solid #efe7e0; 
-         background:#fffdfa; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== الشريط العلوي ===== */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      background: #fffdfa;
+      border-bottom: 1px solid #efe7e0;
+    }
+
     .logo {
-         font:normal 42px Georgia,serif;
-          color:#9b6c75; }
-    .home-link {
-         font-size:14px;
-          border:1px solid #e2c6c7;
-           border-radius:40px;
-            padding:11px 18px;
-         }
-    .hero { 
-        padding:58px 20px 45px;
-         text-align:center;
-          background:linear-gradient(110deg,#faf7f2,#f1e1d8 75%,#f8ede7);
-         }
-    .eyebrow { 
-        font-size:13px;
-         letter-spacing:1px;
-          color:#b68c87;
-           margin:0 0 9px; 
-        }
-    h1 {
-         font-size:36px; 
-         font-weight:400;
-          margin:0 0 13px;
-           color:#826269;
-         }
-    .hero p:last-child {
-         margin:0;
-          color:#8e7773;
-           font-size:15px; 
-        }
-    main {
-         max-width:1180px;
-          padding:38px 22px 70px; 
-          margin:auto;
-         }
-    .categories {
-         display:flex;
-          gap:12px; 
-          justify-content:center;
-           flex-wrap:wrap;
-            margin-bottom:37px;
-         }
-    .category-btn {
-         display:inline-block;
-          cursor:pointer;
-           padding:13px 22px;
-            background:#fff;
-             color:#906e74; 
-             border:1px solid #e3c9c7;
-              border-radius:30px;
-               font:14px Tahoma,Arial,sans-serif; 
-               transition:.2s; 
-            }
-    .category-btn:hover,.category-btn:focus-visible {
-         color:white;
-          background:var(--pink); 
-          border-color:var(--pink);
-         }
-    .section-heading {
-         text-align:center;
-          margin-bottom:29px;
-         }
-    .section-heading h2 {
-         font-size:25px;
-          font-weight:400;
-           margin:0 0 10px;
-         }
-    .flower-mark {
-         color:#bf8996; 
-        }
-    .grid {
-         display:grid; 
-         grid-template-columns:repeat(4,minmax(0,1fr));
-          gap:24px; 
-        }
-    .card {
-         min-width:0; 
-         overflow:hidden;
-          border:1px solid #f1e8e1;
-           background:#fff; 
-           border-radius:155px 155px 18px 18px; box-shadow:0 9px 25px #886b5d0d;
-         }
-    .card img { 
-        width:100%; 
-        height:275px;
-         display:block;
-          object-fit:cover; 
-          background:#e8dacf;
-           border-radius:155px 155px 0 0;
-         }
-    .card-content {
-         padding:22px 18px 20px;
-          text-align:center;
-         }
-    .card h3 { font-size:17px;
-         font-weight:400;
-          line-height:1.6;
-           min-height:30px; 
-           margin:0 0 10px; 
-        }
-    .price {
-         font-size:15px;
-          color:var(--pink-dark); 
-          margin:0 0 20px; 
-        }
-    .add-btn {
-         background:var(--pink); 
-         color:#fff; 
-         border:none;
-          border-radius:30px;
-           padding:12px 21px; 
-           font:14px Tahoma,Arial,sans-serif;
-            cursor:pointer; 
-        }
-    .add-btn:disabled { 
-        opacity:.75;
-         cursor:not-allowed;
-         }
-    .product-section { 
-        display:none;
-         scroll-margin-top:20px; 
-        }
-    #bouquets {
-         display:block; 
-        }
-    .product-section:target { 
-        display:block; 
+      font-family: Georgia, serif;
+      font-size: 42px;
+      color: #9b6c75;
     }
-    main:has(.product-section:target) #bouquets:not(:target) { 
-        display:none;
-     }
-    .cart-indicator {
-         text-align:center;
-          margin-top:33px; 
-          font-size:14px; 
-          color:#9e6876;
-         }
+
+    .home-link {
+      font-size: 14px;
+      padding: 11px 18px;
+      border: 1px solid #e2c6c7;
+      border-radius: 40px;
+    }
+
+    /* ===== المحتوى ===== */
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 38px 22px 70px;
+    }
+
+    /* ===== أزرار الأقسام ===== */
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 37px;
+    }
+
+    .category-btn {
+      padding: 13px 22px;
+      background: white;
+      color: #906e74;
+      border: 1px solid #e3c9c7;
+      border-radius: 30px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .category-btn:hover {
+      background: #bf7787;
+      color: white;
+      border-color: #bf7787;
+    }
+
+    /* ===== عنوان القسم ===== */
+    .section-heading {
+      text-align: center;
+      margin-bottom: 29px;
+    }
+
+    .section-heading h2 {
+      font-size: 25px;
+      font-weight: normal;
+      margin: 0 0 10px;
+    }
+
+    .flower-mark {
+      color: #bf8996;
+    }
+
+   
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #f1e8e1;
+      border-radius: 155px 155px 18px 18px;
+      box-shadow: 0 9px 25px #886b5d0d;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 275px;
+      object-fit: cover;
+      display: block;
+      border-radius: 155px 155px 0 0;
+    }
+
+    .card-content {
+      padding: 22px 18px 20px;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      font-weight: normal;
+      margin: 0 0 10px;
+    }
+
+    .price {
+      color: #925465;
+      margin: 0 0 20px;
+    }
+
+    .add-btn {
+      background: #bf7787;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 21px;
+      font-size: 14px;
+      cursor: pointer;
+      opacity: 1;
+    }
+
+    
+    .product-section {
+      display: none;
+    }
+
+    .product-section:target {
+      display: block;
+    }
+
+    #bouquets {
+      display: block;
+    }
+
+    main:has(.product-section:target) #bouquets:not(:target) {
+      display: none;
+    }
 
     footer {
       text-align: center;
       padding: 0 15px 20px;
       color: #a89591;
       font-size: 11px;
-     }
-    @media(max-width:800px) {
-         .grid {grid-template-columns:repeat(2,minmax(0,1fr));
-        } 
-        .card img {height:230px;}
-     }
-    @media(max-width:540px) {
-         .topbar {padding:15px 20px;}
-          .logo {font-size:32px;} 
-          h1 {font-size:30px;} 
-          .grid {grid-template-columns:1fr;
-            max-width:350px;margin:auto;}
-             .card img {height:275px;} 
-             .hero {padding:43px 18px;}
-             }
-  </style>
+    }
 
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card img {
+        height: 230px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .topbar {
+        padding: 15px 20px;
+      }
+
+      .logo {
+        font-size: 32px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+        margin: auto;
+      }
+
+      .card img {
+        height: 275px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <header class="topbar">
-    <a class="logo" href="home.html" aria-label="Flora - الصفحة الرئيسية">Flora</a>
+    <a class="logo" href="home.html">Flora</a>
     <a class="home-link" href="home.html">العودة للرئيسية ←</a>
   </header>
 
   <main>
-    <nav class="categories" aria-label="أقسام المنتجات">
+
+    <nav class="categories">
       <a class="category-btn" href="#wholesale">ورود بالجملة</a>
       <a class="category-btn" href="#bouquets">باقات الورد</a>
       <a class="category-btn" href="#gifts">ورود مع هدايا</a>
     </nav>
+
     <section class="product-section" id="wholesale">
       <div class="section-heading">
         <h2>ورود بالجملة</h2>
-        <span class="flower-mark" aria-hidden="true">✿</span>
+        <span class="flower-mark">✿</span>
       </div>
       <div class="grid">
-        <article class="card">
-          <img src="images/flower1.png" alt="ورود توليب بالجملة" loading="lazy">
+
+        <div class="card">
+          <img src="images/flower1.png" alt="ورود توليب بالجملة">
           <div class="card-content">
             <h3>ورود توليب بالجملة</h3>
             <p class="price">180 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
-        <article class="card">
-          <img src="images/flower2.png" alt="ورود اقحوان بالجملة" loading="lazy">
+        </div>
+
+        <div class="card">
+          <img src="images/flower2.png" alt="ورود اقحوان بالجملة">
           <div class="card-content">
             <h3>ورود اقحوان بالجملة</h3>
             <p class="price">145 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
-        <article class="card">
-          <img src="images/flower3.png" alt="ورود جوري بالجملة" loading="lazy">
+        </div>
+
+        <div class="card">
+          <img src="images/flower3.png" alt="ورود جوري بالجملة">
           <div class="card-content">
             <h3>ورود جوري بالجملة</h3>
             <p class="price">120 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
-        <article class="card">
-          <img src="images/flower4.png" alt="ورود ليليوم بالجملة" loading="lazy">
+        </div>
+
+        <div class="card">
+          <img src="images/flower4.png" alt="ورود ليليوم بالجملة">
           <div class="card-content">
             <h3>ورود ليليوم بالجملة</h3>
             <p class="price">170 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
+        </div>
+
       </div>
     </section>
 
     <section class="product-section" id="bouquets">
       <div class="section-heading">
         <h2>باقات الورد</h2>
-        <span class="flower-mark" aria-hidden="true">✿</span>
+        <span class="flower-mark">✿</span>
       </div>
       <div class="grid">
-        <article class="card">
-          <img src="images/flower5.png" alt="باقة التوليب الابيض" loading="lazy">
+
+        <div class="card">
+          <img src="images/flower5.png" alt="باقة التوليب الابيض">
           <div class="card-content">
             <h3>باقة التوليب الابيض</h3>
             <p class="price">150 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
-        <article class="card">
-          <img src="images/flower6.png" alt="باقة الجوري الأحمر" loading="lazy">
+        </div>
+
+        <div class="card">
+          <img src="images/flower6.png" alt="باقة الجوري الأحمر">
           <div class="card-content">
             <h3>باقة الجوري الأحمر</h3>
             <p class="price">150 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
-        <article class="card">
-          <img src="images/flower7.png" alt="باقة الليليوم الوردي" loading="lazy">
+        </div>
+
+        <div class="card">
+          <img src="images/flower7.png" alt="باقة الليليوم الوردي">
           <div class="card-content">
             <h3>باقة الليليوم الوردي</h3>
             <p class="price">200 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
-        <article class="card">
-          <img src="images/flower8.png" alt="باقة دوار الشمس" loading="lazy">
+        </div>
+
+        <div class="card">
+          <img src="images/flower8.png" alt="باقة دوار الشمس">
           <div class="card-content">
             <h3>باقة دوار الشمس</h3>
             <p class="price">130 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
+        </div>
+
       </div>
     </section>
+
     <section class="product-section" id="gifts">
       <div class="section-heading">
         <h2>ورود مع هدايا</h2>
-        <span class="flower-mark" aria-hidden="true">✿</span>
+        <span class="flower-mark">✿</span>
       </div>
       <div class="grid">
-        <article class="card">
-          <img src="images/flower9.jpg" alt="ورد مع كيك" loading="lazy">
+
+        <div class="card">
+          <img src="images/flower9.jpg" alt="ورد مع كيك">
           <div class="card-content">
             <h3>ورد مع كيك</h3>
             <p class="price">240 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
-        <article class="card">
-          <img src="images/flower10.jpg" alt="ورد مع شوكولاتة" loading="lazy">
+        </div>
+
+        <div class="card">
+          <img src="images/flower10.jpg" alt="ورد مع شوكولاتة">
           <div class="card-content">
             <h3>ورد مع شوكولاتة</h3>
             <p class="price">210 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
-        <article class="card">
-          <img src="images/flower11.jpg" alt="ورد مع مجوهرات" loading="lazy">
+        </div>
+
+        <div class="card">
+          <img src="images/flower11.jpg" alt="ورد مع مجوهرات">
           <div class="card-content">
             <h3>ورد مع مجوهرات</h3>
             <p class="price">320 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
-        <article class="card">
-          <img src="images/flower12.jpg" alt="ورد مع عطر" loading="lazy">
+        </div>
+
+        <div class="card">
+          <img src="images/flower12.jpg" alt="ورد مع عطر">
           <div class="card-content">
             <h3>ورد مع عطر</h3>
             <p class="price">280 ر.س</p>
-            <button class="add-btn" type="button" disabled title="السلة غير مفعّلة في النسخة الثابتة">إضافة إلى السلة</button>
+            <button class="add-btn" >إضافة إلى السلة</button>
           </div>
-        </article>
+        </div>
+
       </div>
     </section>
 
   </main>
 
-
-<footer>
-  © 2026 فلورا. جميع الحقوق محفوظة.
-  <br>
-  ❣️Made with Love by Flora Team❣️
-</footer>
+  <footer>
+    © 2026 فلورا. جميع الحقوق محفوظة.
+    <br>
+    ❣️Made with Love by Flora Team❣️
+  </footer>
 
 </body>
 </html>
