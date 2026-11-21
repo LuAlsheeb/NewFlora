@@ -1,14 +1,3 @@
-
-// Handle Login Form
-let loginForm = document.getElementById("loginForm");
-
-if (loginForm) {
-  loginForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    window.location.href = "home.html";
-  });
-}
-
 // Load Cart from Local Storage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
