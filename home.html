@@ -9,6 +9,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
 
+        /* التنسيق العام للصفحة */
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +22,7 @@
             color: #3e2222;
         }
 
-        /* البنر */
+        /* تنسيق البنر الرئيسي */
         .hero {
             width: 100%;
             height: 350px;
@@ -55,7 +56,7 @@
             line-height: 1.6;
         }
 
-        /* التصنيفات */
+        /* تنسيق قسم تصنيفات الورود */
         .categories {
             padding: 25px 6% 65px;
         }
@@ -82,6 +83,7 @@
             font-size: 20px;
         }
 
+        /* ترتيب بطاقات التصنيفات وتنسيق الصور */
         .category-grid {
             display: grid;
             grid-template-columns: repeat(3,minmax(0, 1fr));
@@ -97,12 +99,11 @@
             border-radius: 200px 200px 18px 18px;
             overflow: hidden;
             box-shadow: 0 4px 18px rgba(80, 45, 45, 0.04);
-            
         }
 
         .category-image {
             height: 360px;
-            width: 100%;  
+            width: 100%;
             overflow: hidden;
             border-radius: 50% 50% 0 0 / 50% 50% 0 0;
         }
@@ -131,6 +132,7 @@
             min-height: 46px;
         }
 
+        /* تنسيق أزرار الانتقال بين التصنيفات */
         .arrow-btn {
             display:flex;
             align-items: center;
@@ -145,15 +147,21 @@
             margin-top: 10px;
             margin-right: 0;
         }
-        .category-info{
+
+        .category-info {
             padding: 18px;
-            text-align: right;}
-        .category-info p{
-            min-height: 0;}
+            text-align: right;
+        }
+
+        .category-info p {
+            min-height: 0;
+        }
+
         .arrow-btn:hover {
             background: #9D4C60;
         }
 
+        /* تنسيق الموقع على الشاشات الصغيرة */
         @media (max-width: 750px) {
             .hero {
                 height: 300px;
@@ -180,24 +188,97 @@
             .category-image {
                 height: 250px;
             }
-
-            
-
         }
+
+        /* تنسيق أسفل الصفحة */
         footer {
             text-align: center;
             padding: 0 15px 20px;
             color: #a89591;
             font-size: 11px;
         }
+
+        /* تنسيق الشريط العلوي */
+        .promo-bar {
+            display: flex;
+            align-items: center;
+            direction: ltr;
+            width: 100%;
+            height: 70px;
+            background-color: #fdf9f5;
+            padding: 0 25px;
+            overflow: hidden;
+            gap: 20px;
+        }
+
+        /* تنسيق السلة داخل دائرة */
+        .home-link {
+            position: static;
+            order: -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border: 1px solid #e2c6c7;
+            border-radius: 50%;
+            background-color: #FDF9F5;
+            color: #925465;
+            font-size: 20px;
+            text-decoration: none;
+            flex-shrink: 0;
+            transition: 0.3s;
+        }
+
+        .home-link:hover {
+            background-color: #ead7d7;
+        }
+
+        /* تنسيق وحركة نص الخصم */
+        .promo-text {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            direction: ltr;
+        }
+
+        .promo-text span {
+            display: inline-block;
+            position: relative;
+            left: 100%;
+            color: #593d45;
+            font-size: 15px;
+            animation: moveText 22s linear infinite;
+        }
+
+        @keyframes moveText {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(calc(-100% - 100vw));
+            }
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- الشريط العلوي: السلة وكود الخصم -->
+    <div class="promo-bar">
+        <a class="home-link" href="cartt.html">🛒</a>
+
+        <div class="promo-text">
+            <span>🌸 خصم 10% على جميع الباقات | استخدمي كود FLORA10 🌸</span>
+        </div>
+    </div>
+
     <main>
+
         <!-- البنر الرئيسي -->
         <section class="hero">
-            <a class="home-link" href="cartt.html">🛒 </a>
             <div class="hero-content">
                 <h1 class="hero-logo">Flora</h1>
                 <p class="hero-subtitle">
@@ -206,7 +287,7 @@
             </div>
         </section>
 
-        <!-- تصنيفات الورود -->
+        <!-- قسم تصنيفات الورود -->
         <section class="categories">
             <div class="section-heading">
                 <span class="eyebrow">تسوقي حسب التصنيف</span>
@@ -216,6 +297,7 @@
 
             <div class="category-grid">
 
+                <!-- تصنيف ورود بالجملة -->
                 <article class="category-card">
                     <div class="category-image">
                         <img src="images/bulk.jpg" alt="ورود بالجملة">
@@ -231,6 +313,7 @@
                     </div>
                 </article>
 
+                <!-- تصنيف باقات الورود -->
                 <article class="category-card">
                     <div class="category-image">
                         <img src="images/bouquet.jpg" alt="باقات الورود">
@@ -246,6 +329,7 @@
                     </div>
                 </article>
 
+                <!-- تصنيف ورود مع هدايا -->
                 <article class="category-card">
                     <div class="category-image">
                         <img src="images/gifts.jpg" alt="ورود مع هدايا">
@@ -262,14 +346,18 @@
                 </article>
 
             </div>
+
+            <!-- حقوق النشر -->
             <footer>
                 <br>
-            © 2026 فلورا. جميع الحقوق محفوظة.
-    <br>
-        ❣ Made with LoVe by Floar Team ❣
-    </footer>
+                © 2026 فلورا. جميع الحقوق محفوظة.
+                <br>
+                ❣ Made with LoVe by Floar Team ❣
+            </footer>
+
         </section>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
