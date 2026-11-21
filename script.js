@@ -140,7 +140,7 @@ function applyCoupon() {
   let code = document.getElementById("couponCode").value;
   let message = document.getElementById("couponMessage");
 
-  if (code.trim().toUpperCase() === "FLORA10") {
+  if (code.trim().toUpperCase() === "ITDEPT10") {
     discountRate = 0.10;
     message.textContent = "تم تطبيق الخصم بنجاح ";
     message.style.color = "green";
