@@ -204,6 +204,59 @@
             font-size: 12px;
         }
 
+       .payment-box {
+            border: 1px solid #E8D5D7;
+            border-radius: 12px;
+            padding: 18px;
+            margin: 25px 0;
+            background: #FFFCFA;
+        }
+
+       .payment-box h3 {
+            color: #B65D72;
+            font-size: 17px;
+            margin-bottom: 15px;
+       }
+
+       .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #E8D5D7;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            background: white;
+       }
+
+       .payment-option:last-child {
+           margin-bottom: 0;
+       }
+
+       .payment-option:has(input:checked) {
+           border: 1.5px solid #B65D72;
+           background: #FDF4F4;
+       }
+
+      .payment-option input {
+           accent-color: #B65D72;
+           width: 17px;
+           height: 17px;
+           cursor: pointer;
+        }
+
+        .apple-pay {
+            font-size: 19px;
+            color: #000;
+            direction: ltr;
+        }
+
+        .apple-pay strong {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
         .total {
             border-top: 1px solid #F0D9DC;
             padding-top: 18px;
@@ -212,6 +265,7 @@
             font-size: 20px;
             color: #B65D72;
         }
+
 
         .checkout-btn {
             width: 100%;
@@ -352,15 +406,40 @@
 
                 <small id="couponMessage"></small>
             </div>
+
+            <!-- طريقة الدفع -->
+            <div class="payment-box">
+
+            <h3>طريقة الدفع</h3>
+
+            <label class="payment-option">
+            <input type="radio" name="payment" value="applepay" checked>
+
+             <span class="apple-pay">
+              <strong> Apple</strong>
+              <span> Pay </span>
+             </span>
+            </label>
+
+            <label class="payment-option">
+            <input type="radio" name="payment" value="cash">
+
+            <span>الدفع عند الاستلام</span>
+            </label>
+
+            </div>
+
             <!-- الإجمالي -->
             <div class="summary-row total">
                 <span>الإجمالي</span>
                 <span id="total">0 ر.س</span>
             </div>
+
             <button class="checkout-btn" onclick="checkout()">
-                إتمام الطلب
-            </button>
-        </div>
+            إتمام الطلب
+           </button>
+           </div>
+         
     </main>
     <!-- Footer -->
     <footer>

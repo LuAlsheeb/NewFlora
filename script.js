@@ -154,12 +154,31 @@ function applyCoupon() {
 }
 
 // Checkout
+
+// Checkout
 function checkout() {
-  if (cart.length === 0) {
-    alert("السلة فارغة! أضيفي منتجات أولاً");
-  } else {
-    alert("تم تجهيز طلبك بنجاح  .. شكرا لتسوقك معنا!");
-  }
+
+    if (cart.length === 0) {
+        alert("السلة فارغة! أضف منتجات أولاً");
+        return;
+    }
+
+    let payment = document.querySelector('input[name="payment"]:checked');
+
+    if (!payment) {
+        alert("يرجى اختيار طريقة الدفع");
+        return;
+    }
+
+    if (payment.value === "applepay") {
+        alert("تم تجهيز طلبك باستخدام Apple Pay");
+    } 
+    else if (payment.value === "cash") {
+        alert("تم تجهيز طلبك من خلال الدفع عند الاستلام");
+    }
+
+    cart = [];
+    saveCart();
 }
 
 // Initialize Cart
