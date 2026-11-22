@@ -153,7 +153,6 @@ function applyCoupon() {
   updateTotal();
 }
 
-// Checkout
 
 // Checkout
 function checkout() {
@@ -170,16 +169,25 @@ function checkout() {
         return;
     }
 
+    let total = 0;
+
+    cart.forEach(function(product) {
+        total += product.price * product.quantity;
+    });
+
     if (payment.value === "applepay") {
         alert("تم تجهيز طلبك باستخدام Apple Pay");
-    } 
+    }
     else if (payment.value === "cash") {
         alert("تم تجهيز طلبك من خلال الدفع عند الاستلام");
     }
 
+    window.location.href = "php/orders.php?total=" + total;
+
     cart = [];
     saveCart();
 }
+
 
 // Initialize Cart
 showCart();
