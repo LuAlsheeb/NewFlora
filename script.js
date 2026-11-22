@@ -34,7 +34,16 @@ function addToCart(name, price, image) {
   }
 
   saveCart();
-  alert("تمت إضافة المنتج إلى السلة");
+  showMessage("تمت إضافة المنتج إلى السلة");
+}
+function showMessage(message) {
+  let messageBox = document.getElementById("message");
+  if (!messageBox) return;
+  messageBox.textContent = message;
+
+  setTimeout(function() {
+    messageBox.textContent = "";
+  }, 3000);
 }
 
 // Display Cart Products

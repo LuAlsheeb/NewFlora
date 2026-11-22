@@ -21,6 +21,8 @@ try {
     ]);
 
     echo "<h2>Order saved successfully</h2>";
+//
+   
 
 } catch(PDOException $e) {
 
