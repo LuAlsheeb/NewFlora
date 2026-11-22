@@ -1,3 +1,4 @@
+
 <?php
 require_once "db.php";
 
@@ -17,7 +18,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php foreach($products as $product){ ?>
 
 <div style="border:1px solid #ccc;padding:10px;margin:10px;">
-    
+
     <img src="<?php echo $product['image']; ?>" width="150">
 
     <h3><?php echo $product['name']; ?></h3>
