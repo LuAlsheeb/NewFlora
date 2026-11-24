@@ -37,13 +37,20 @@ function addToCart(name, price, image) {
   showMessage("تمت إضافة المنتج إلى السلة");
 }
 function showMessage(message) {
-  let messageBox = document.getElementById("message");
-  if (!messageBox) return;
-  messageBox.textContent = message;
 
-  setTimeout(function() {
-    messageBox.textContent = "";
-  }, 3000);
+    let messageBox = document.getElementById("message");
+
+    if (!messageBox) return;
+
+    messageBox.textContent = message;
+    messageBox.style.opacity = "1";
+
+    setTimeout(function() {
+
+        messageBox.style.opacity = "0";
+
+    }, 3000);
+
 }
 
 // Display Cart Products
@@ -167,35 +174,50 @@ function applyCoupon() {
 function checkout() {
 
     if (cart.length === 0) {
-        alert("السلة فارغة! أضف منتجات أولاً");
+
+        showMessage("السلة فارغة! أضف منتجات أولاً");
         return;
+
     }
 
     let payment = document.querySelector('input[name="payment"]:checked');
 
     if (!payment) {
+
         alert("يرجى اختيار طريقة الدفع");
         return;
+
     }
 
     let total = 0;
 
     cart.forEach(function(product) {
+
         total += product.price * product.quantity;
+
     });
 
     if (payment.value === "applepay") {
-        alert("تم تجهيز طلبك باستخدام Apple Pay");
-    }
-    else if (payment.value === "cash") {
-        alert("تم تجهيز طلبك من خلال الدفع عند الاستلام");
-    }
 
-    window.location.href = "php/orders.php?total=" + total;
+        showMessage("تم تجهيز طلبك باستخدام Apple Pay");
+
+    } else if (payment.value === "cash") {
+
+        showMessage("تم تجهيز طلبك من خلال الدفع عند الاستلام");
+
+    }
 
     cart = [];
     saveCart();
+
+    setTimeout(function() {
+
+        window.location.href = "php/orders.php?total=" + total;
+
+    }, 3000);
+
 }
+
 
 
 // Initialize Cart
