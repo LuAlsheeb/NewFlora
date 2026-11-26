@@ -199,11 +199,11 @@ function checkout() {
 
     if (payment.value === "applepay") {
 
-        showMessage("تم تجهيز طلبك باستخدام Apple Pay");
+        showMessage("تم اتمام طلبك بنجاح, شكرا لاختيارك Flora");
 
     } else if (payment.value === "cash") {
 
-        showMessage("تم تجهيز طلبك من خلال الدفع عند الاستلام");
+        showMessage("تم اتمام طلبك بنجاح, شكرا لاختيارك Flora");
 
     }
 
