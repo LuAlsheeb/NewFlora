@@ -2,394 +2,385 @@
 <html lang="ar" dir="rtl">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flora | المنتجات</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora | المنتجات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">    <style>
+        /* General */
+        * {
+            box-sizing: border-box; /* Include padding and border */
+        }
 
-  <style>
-    /* General */
-    * {
-      box-sizing: border-box;
-    }
+        /* Page body */
+        body {
+            margin: 0; /* Remove margins */
+            background: #faf8f4; /* Background color */
+            color: #685450; /* Text color */
+            font-family: 'Tajawal', sans-serif; /* Font type */ 
+        }
 
-    body {
-      margin: 0;
-      background: #faf8f4;
-      color: #685450;
-      font-family: Tahoma, Arial, sans-serif;
-    }
+        /* Links */
+        a {
+            color: inherit; /* Inherit color */
+            text-decoration: none; /* Remove underline */
+        }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+        /* Header */
+        .topbar {
+            display: flex; /* Flex layout */
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Center items */
+            padding: 20px 7%; /* Inner spacing */
+            background: #fffdfa; /* Background color */
+            border-bottom: 1px solid #efe7e0; /* Bottom line */
+        }
 
-    /* Header */
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 7%;
-      background: #fffdfa;
-      border-bottom: 1px solid #efe7e0;
-    }
+        /* Logo */
+        .logo {
+            font-family: Georgia, serif; /* Font type */
+            font-size: 42px; /* Font size */
+            color: #9b6c75; /* Logo color */
+        }
 
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 42px;
-      color: #9b6c75;
-    }
+        /* Header links */
+        .header-links {
+            display: flex; /* Links in a row */
+            gap: 12px; /* Space between links */
+            align-items: center; /* Center links */
+        }
 
-    .header-links {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
+        /* Navigation buttons */
+        .home-link {
+            font-size: 14px; /* Text size */
+            padding: 11px 18px; /* Inner spacing */
+            border: 1px solid #e2c6c7; /* Button border */
+            border-radius: 40px; /* Rounded corners */
+        }
 
-    .home-link {
-      font-size: 14px;
-      padding: 11px 18px;
-      border: 1px solid #e2c6c7;
-      border-radius: 40px;
-    }
+        /* Hover effect */
+        .home-link:hover {
+            background: #ead7d7; /* Hover color */
+        }
 
-    .home-link:hover {
-      background: #ead7d7;
-    }
+        /* Main */
+        main {
+            max-width: 1180px; /* Max width */
+            margin: auto; /* Center */
+            padding: 38px 22px 70px; /* Padding */
+        }
 
-    /* Main */
-    main {
-      max-width: 1180px;
-      margin: auto;
-      padding: 38px 22px 70px;
-    }
+        /* Section */
+        .section-heading {
+            text-align: center; /* Center text */
+            margin-bottom: 29px; /* Bottom margin */
+        }
 
-    /* Categories */
-    .categories {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 37px;
-    }
+        .section-heading h2 {
+            font-size: 25px; /* Text size */
+            font-weight: normal; /* Normal weight */
+            margin: 0 0 10px; /* Bottom margin */
+        }
 
-    .category-btn {
-      padding: 13px 22px;
-      background: white;
-      color: #906e74;
-      border: 1px solid #e3c9c7;
-      border-radius: 30px;
-      font-size: 14px;
-      transition: 0.2s;
-    }
+        .flower-mark {
+            color: #bf8996; /* Flower color */
+        }
 
-    .category-btn:hover {
-      background: #bf7787;
-      color: white;
-      border-color: #bf7787;
-    }
+        /* Products grid */
+        .grid {
+            display: grid; /* Grid layout */
+            grid-template-columns: repeat(4, 1fr); /* Four columns */
+            gap: 24px; /* Card spacing */
+        }
 
-    /* Section */
-    .section-heading {
-      text-align: center;
-      margin-bottom: 29px;
-    }
+        /* Product card */
+        .card {
+            background: white; /* Card color */
+            border-radius: 155px 155px 18px 18px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow */
+            text-align: center; /* Center text */
+        }
 
-    .section-heading h2 {
-      font-size: 25px;
-      font-weight: normal;
-      margin: 0 0 10px;
-    }
+        /* Product image */
+        .card img {
+            width: 100%; /* Image width */
+            height: 275px; /* Image height */
+            object-fit: cover; /* Fit image */
+            display: block; /* Remove extra gap */
+        }
 
-    .flower-mark {
-      color: #bf8996;
-    }
+        /* Card content */
+        .card-content {
+            padding: 22px 18px 20px; /* Inner spacing */
+        }
 
-    /* Products */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
+        /* Product name */
+        .card h3 {
+            font-size: 17px; /* Font size */
+            font-weight: normal; /* Normal weight */
+            margin: 0 0 10px; /* Bottom margin */
+        }
 
-    .card {
-      background: white;
-      border: 1px solid #f1e8e1;
-      border-radius: 155px 155px 18px 18px;
-      box-shadow: 0 9px 25px #886b5d0d;
-      overflow: hidden;
-      text-align: center;
-    }
+        /* Product price */
+        .price {
+            color: #925465; /* Price color */
+            margin: 0 0 20px; /* Bottom margin */
+        }
 
-    .card img {
-      width: 100%;
-      height: 275px;
-      object-fit: cover;
-      display: block;
-      border-radius: 155px 155px 0 0;
-    }
+        /* Add to cart button */
+        .add-btn {
+            background: #bf7787; /* Button color */
+            color: white; /* Text color */
+            border: none; /* Remove border */
+            border-radius: 30px; /* Rounded corners */
+            padding: 12px 21px; /* Inner spacing */
+            font-size: 14px; /* Font size */
+            cursor: pointer; /* Hand cursor */
+            font-family: inherit; /* Inherit font */
+        }
 
-    .card-content {
-      padding: 22px 18px 20px;
-    }
+        /* Show selected category */
+        .product-section {
+            display: none; /* Hide sections */
+        }
 
-    .card h3 {
-      font-size: 17px;
-      font-weight: normal;
-      margin: 0 0 10px;
-    }
+        .product-section:target {
+            display: block; /* Show selected section */
+        }
 
-    .price {
-      color: #925465;
-      margin: 0 0 20px;
-    }
+        #bouquets {
+            display: block; /* Default section */
+        }
 
-    .add-btn {
-      background: #bf7787;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      padding: 12px 21px;
-      font-size: 14px;
-      cursor: pointer;
-    }
+        main:has(.product-section:target) #bouquets:not(:target) {
+            display: none; /* Hide default section */
+        }
 
-    /* Show selected category */
-    .product-section {
-      display: none;
-    }
+        /* Cart message */
+        #message {
+            color: #9b6c75; /* Text color */
+            text-align: center; /* Center text */
+        }
 
-    .product-section:target {
-      display: block;
-    }
+        /* Footer */
+        footer {
+            text-align: center; /* Center text */
+            padding: 0 15px 20px; /* Padding */
+            color: #a89591; /* Text color */
+            font-size: 11px; /* Font size */
+        }
 
-    #bouquets {
-      display: block;
-    }
+        /* Responsive */
+        @media (max-width: 800px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns */
+            }
+        }
 
-    main:has(.product-section:target) #bouquets:not(:target) {
-      display: none;
-    }
+        @media (max-width: 540px) {
+            .topbar {
+                padding: 15px 20px; /* Padding */
+            }
 
-    /* Cart message */
-    #message {
-      color: #9b6c75;
-      background: transparent;
-      text-align: center;
-      font-size: 16px;
-      padding: 12px;
-      margin: 10px auto;
-    }
+            .logo {
+                font-size: 32px; /* Logo size */
+            }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 0 15px 20px;
-      color: #a89591;
-      font-size: 11px;
-    }
-
-    /* Responsive */
-    @media (max-width: 800px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .card img {
-        height: 230px;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .topbar {
-        padding: 15px 20px;
-      }
-
-      .logo {
-        font-size: 32px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-        max-width: 350px;
-        margin: auto;
-      }
-
-      .card img {
-        height: 275px;
-      }
-    }
-  </style>
+            .grid {
+                grid-template-columns: 1fr; /* One column */
+                max-width: 350px; /* Max width */
+                margin: auto; /* Center */
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header class="topbar">
+<header class="topbar">
     <a class="logo" href="home.html">Flora</a>
 
     <div class="header-links">
-      <a class="home-link" href="cartt.html">🛒</a>
-      <a class="home-link" href="home.html">العودة للرئيسية ←</a>
+        <a class="home-link" href="cartt.html">🛒</a>
+        <a class="home-link" href="home.html">العودة للرئيسية ←</a>
     </div>
-  </header>
+</header>
 
-  <p id="message"></p>
+<p id="message"></p>
 
-  <main>
+<main>
 
     <!-- Wholesale Flowers -->
     <section class="product-section" id="wholesale">
-      <div class="section-heading">
-        <h2>ورود بالجملة</h2>
-        <span class="flower-mark">✿</span>
-      </div>
-
-      <div class="grid">
-
-        <div class="card">
-          <img src="images/flower1.png" alt="ورود توليب بالجملة">
-          <div class="card-content">
-            <h3>ورود توليب بالجملة</h3>
-            <p class="price">180 ر.س</p>
-            <button class="add-btn" onclick="addToCart('ورود توليب بالجملة', 180, 'images/flower1.png')">إضافة إلى السلة</button>
-          </div>
+        <div class="section-heading">
+            <h2>ورود بالجملة</h2>
+            <span class="flower-mark">✿</span>
         </div>
 
-        <div class="card">
-          <img src="images/flower2.png" alt="ورود اقحوان بالجملة">
-          <div class="card-content">
-            <h3>ورود اقحوان بالجملة</h3>
-            <p class="price">145 ر.س</p>
-            <button class="add-btn" onclick="addToCart('ورود اقحوان بالجملة', 145, 'images/flower2.png')">إضافة إلى السلة</button>
-          </div>
-        </div>
+        <div class="grid">
 
-        <div class="card">
-          <img src="images/flower3.png" alt="ورود جوري بالجملة">
-          <div class="card-content">
-            <h3>ورود جوري بالجملة</h3>
-            <p class="price">120 ر.س</p>
-            <button class="add-btn" onclick="addToCart('ورود جوري بالجملة', 120, 'images/flower3.png')">إضافة إلى السلة</button>
-          </div>
-        </div>
+            <div class="card">
+                <img src="images/flower1.png" alt="ورود توليب بالجملة">
+                <div class="card-content">
+                    <h3>ورود توليب بالجملة</h3>
+                    <p class="price">180 ر.س</p>
+                    <button class="add-btn"
+                        onclick="addToCart('ورود توليب بالجملة', 180, 'images/flower1.png')">إضافة إلى
+                        السلة</button>
+                </div>
+            </div>
 
-        <div class="card">
-          <img src="images/flower4.png" alt="ورود ليليوم بالجملة">
-          <div class="card-content">
-            <h3>ورود ليليوم بالجملة</h3>
-            <p class="price">170 ر.س</p>
-            <button class="add-btn" onclick="addToCart('ورود ليليوم بالجملة', 170, 'images/flower4.png')">إضافة إلى السلة</button>
-          </div>
-        </div>
+            <div class="card">
+                <img src="images/flower2.png" alt="ورود اقحوان بالجملة">
+                <div class="card-content">
+                    <h3>ورود اقحوان بالجملة</h3>
+                    <p class="price">145 ر.س</p>
+                    <button class="add-btn"
+                        onclick="addToCart('ورود اقحوان بالجملة', 145, 'images/flower2.png')">إضافة إلى
+                        السلة</button>
+                </div>
+            </div>
 
-      </div>
+            <div class="card">
+                <img src="images/flower3.png" alt="ورود جوري بالجملة">
+                <div class="card-content">
+                    <h3>ورود جوري بالجملة</h3>
+                    <p class="price">120 ر.س</p>
+                    <button class="add-btn"
+                        onclick="addToCart('ورود جوري بالجملة', 120, 'images/flower3.png')">إضافة إلى السلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/flower4.png" alt="ورود ليليوم بالجملة">
+                <div class="card-content">
+                    <h3>ورود ليليوم بالجملة</h3>
+                    <p class="price">170 ر.س</p>
+                    <button class="add-btn"
+                        onclick="addToCart('ورود ليليوم بالجملة', 170, 'images/flower4.png')">إضافة إلى
+                        السلة</button>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <!-- Flower Bouquets -->
     <section class="product-section" id="bouquets">
-      <div class="section-heading">
-        <h2>باقات الورد</h2>
-        <span class="flower-mark">✿</span>
-      </div>
-
-      <div class="grid">
-
-        <div class="card">
-          <img src="images/flower5.png" alt="باقة التوليب الابيض">
-          <div class="card-content">
-            <h3>باقة التوليب الابيض</h3>
-            <p class="price">150 ر.س</p>
-            <button class="add-btn" onclick="addToCart('باقة التوليب الابيض', 150, 'images/flower5.png')">إضافة إلى السلة</button>
-          </div>
+        <div class="section-heading">
+            <h2>باقات الورد</h2>
+            <span class="flower-mark">✿</span>
         </div>
 
-        <div class="card">
-          <img src="images/flower6.png" alt="باقة الجوري الأحمر">
-          <div class="card-content">
-            <h3>باقة الجوري الأحمر</h3>
-            <p class="price">150 ر.س</p>
-            <button class="add-btn" onclick="addToCart('باقة الجوري الأحمر', 150, 'images/flower6.png')">إضافة إلى السلة</button>
-          </div>
-        </div>
+        <div class="grid">
 
-        <div class="card">
-          <img src="images/flower7.png" alt="باقة الليليوم الوردي">
-          <div class="card-content">
-            <h3>باقة الليليوم الوردي</h3>
-            <p class="price">200 ر.س</p>
-            <button class="add-btn" onclick="addToCart('باقة الليليوم الوردي', 200, 'images/flower7.png')">إضافة إلى السلة</button>
-          </div>
-        </div>
+            <div class="card">
+                <img src="images/flower5.png" alt="باقة التوليب الابيض">
+                <div class="card-content">
+                    <h3>باقة التوليب الابيض</h3>
+                    <p class="price">150 ر.س</p>
+                    <button class="add-btn"
+                        onclick="addToCart('باقة التوليب الابيض', 150, 'images/flower5.png')">إضافة إلى
+                        السلة</button>
+                </div>
+            </div>
 
-        <div class="card">
-          <img src="images/flower8.png" alt="باقة دوار الشمس">
-          <div class="card-content">
-            <h3>باقة دوار الشمس</h3>
-            <p class="price">130 ر.س</p>
-            <button class="add-btn" onclick="addToCart('باقة دوار الشمس', 130, 'images/flower8.png')">إضافة إلى السلة</button>
-          </div>
-        </div>
+            <div class="card">
+                <img src="images/flower6.png" alt="باقة الجوري الأحمر">
+                <div class="card-content">
+                    <h3>باقة الجوري الأحمر</h3>
+                    <p class="price">150 ر.س</p>
+                    <button class="add-btn"
+                        onclick="addToCart('باقة الجوري الأحمر', 150, 'images/flower6.png')">إضافة إلى
+                        السلة</button>
+                </div>
+            </div>
 
-      </div>
+            <div class="card">
+                <img src="images/flower7.png" alt="باقة الليليوم الوردي">
+                <div class="card-content">
+                    <h3>باقة الليليوم الوردي</h3>
+                    <p class="price">200 ر.س</p>
+                    <button class="add-btn"
+                        onclick="addToCart('باقة الليليوم الوردي', 200, 'images/flower7.png')">إضافة إلى
+                        السلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/flower8.png" alt="باقة دوار الشمس">
+                <div class="card-content">
+                    <h3>باقة دوار الشمس</h3>
+                    <p class="price">130 ر.س</p>
+                    <button class="add-btn" onclick="addToCart('باقة دوار الشمس', 130, 'images/flower8.png')">إضافة
+                        إلى السلة</button>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <!-- Flowers with Gifts -->
     <section class="product-section" id="gifts">
-      <div class="section-heading">
-        <h2>ورود مع هدايا</h2>
-        <span class="flower-mark">✿</span>
-      </div>
-
-      <div class="grid">
-
-        <div class="card">
-          <img src="images/flower9.jpg" alt="ورد مع كيك">
-          <div class="card-content">
-            <h3>ورد مع كيك</h3>
-            <p class="price">240 ر.س</p>
-            <button class="add-btn" onclick="addToCart('ورد مع كيك', 240, 'images/flower9.jpg')">إضافة إلى السلة</button>
-          </div>
+        <div class="section-heading">
+            <h2>ورود مع هدايا</h2>
+            <span class="flower-mark">✿</span>
         </div>
 
-        <div class="card">
-          <img src="images/flower10.jpg" alt="ورد مع شوكولاتة">
-          <div class="card-content">
-            <h3>ورد مع شوكولاتة</h3>
-            <p class="price">210 ر.س</p>
-            <button class="add-btn" onclick="addToCart('ورد مع شوكولاتة', 210, 'images/flower10.jpg')">إضافة إلى السلة</button>
-          </div>
-        </div>
+        <div class="grid">
 
-        <div class="card">
-          <img src="images/flower11.jpg" alt="ورد مع مجوهرات">
-          <div class="card-content">
-            <h3>ورد مع مجوهرات</h3>
-            <p class="price">320 ر.س</p>
-            <button class="add-btn" onclick="addToCart('ورد مع مجوهرات', 320, 'images/flower11.jpg')">إضافة إلى السلة</button>
-          </div>
-        </div>
+            <div class="card">
+                <img src="images/flower9.jpg" alt="ورد مع كيك">
+                <div class="card-content">
+                    <h3>ورد مع كيك</h3>
+                    <p class="price">240 ر.س</p>
+                    <button class="add-btn" onclick="addToCart('ورد مع كيك', 240, 'images/flower9.jpg')">إضافة إلى
+                        السلة</button>
+                </div>
+            </div>
 
-        <div class="card">
-          <img src="images/flower12.jpg" alt="ورد مع عطر">
-          <div class="card-content">
-            <h3>ورد مع عطر</h3>
-            <p class="price">280 ر.س</p>
-            <button class="add-btn" onclick="addToCart('ورد مع عطر', 280, 'images/flower12.jpg')">إضافة إلى السلة</button>
-          </div>
-        </div>
+            <div class="card">
+                <img src="images/flower10.jpg" alt="ورد مع شوكولاتة">
+                <div class="card-content">
+                    <h3>ورد مع شوكولاتة</h3>
+                    <p class="price">210 ر.س</p>
+                    <button class="add-btn" onclick="addToCart('ورد مع شوكولاتة', 210, 'images/flower10.jpg')">إضافة
+                        إلى السلة</button>
+                </div>
+            </div>
 
-      </div>
+            <div class="card">
+                <img src="images/flower11.jpg" alt="ورد مع مجوهرات">
+                <div class="card-content">
+                    <h3>ورد مع مجوهرات</h3>
+                    <p class="price">320 ر.س</p>
+                    <button class="add-btn" onclick="addToCart('ورد مع مجوهرات', 320, 'images/flower11.jpg')">إضافة
+                        إلى السلة</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/flower12.jpg" alt="ورد مع عطر">
+                <div class="card-content">
+                    <h3>ورد مع عطر</h3>
+                    <p class="price">280 ر.س</p>
+                    <button class="add-btn" onclick="addToCart('ورد مع عطر', 280, 'images/flower12.jpg')">إضافة إلى
+                        السلة</button>
+                </div>
+            </div>
+
+        </div>
     </section>
 
-  </main>
+</main>
 
-  <footer>
+<footer>
     © 2026 فلورا. جميع الحقوق محفوظة.
     <br>
     ❣ Made with Love by Flora Team ❣
-  </footer>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
-</html>
+
+</html>A
