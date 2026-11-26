@@ -3,19 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flora </title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            margin: 0; /* Removes the default outer spacing */
+            padding: 0; /* Removes the default inner spacing */
+            box-sizing: border-box; /* Ensures that padding and border are included in the element's total size */
         }
-
+        /* Default main Colors in index page */
         :root {
             --cream: #faf6f0;
             --pink: #b66f80;
@@ -23,246 +19,172 @@
             --muted: #927b7d;
             --border: #eadbd7;
         }
-
+        /*General Style for index page*/
         body {
             font-family: 'Cairo', sans-serif;
             background: var(--cream);
             color: var(--dark);
-
         }
-
-        /* Navigation */
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px 8%;
+            display: flex;/*arranges items in a row */
+            justify-content: space-between;/*Space between items */
+            align-items: center;/*Center items in a vertical */
+            padding: 22px 8%;/*add inner spacing */
         }
-
         .logo {
-            font-family: Georgia, serif;
-            font-size: 42px;
-            color: #9b6c75;
+            font-family: Georgia, serif;/*Sets the font  */
+            font-size: 42px;/*Sets the text size */
+            color: #9b6c75;/*Sets the text color */
         }
-
-
         .nav-note {
-            color: var(--muted);
-            font-size: 13px;
+            color: var(--muted); /*Sets the text color */
+            font-size: 13px; /*Sets the text size */
         }
-
         /* Main layout */
         .container {
-            width: 85%;
-            max-width: 1050px;
-            min-height: 590px;
-            margin: 25px auto 35px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 15px 50px #593d4510;
+            width: 85%;/*Sets the width */
+            max-width: 1050px;/*limits the maximum width */
+            min-height: 590px;/*limits the minimum height */
+            margin: 25px auto 35px;/*adds outer spacing */
+            display: grid; /*uses Grid layout */
+            grid-template-columns: 1fr 1fr;/*Creates two equal columns */
+            background: white;/*Sets the background color */
         }
-
         /* Welcome side */
         .welcome {
-            background: #f0e2df;
-            padding: 55px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .eyebrow {
-            color: var(--pink);
-            font-size: 11px;
-            letter-spacing: 3px;
-            direction: ltr;
-            text-align: right;
+            background: #f0e2df;/*Sets the background color */
+            padding: 55px 40px;/*adds inner spacing */
+            display: flex;/*arranges items in a row */
+            flex-direction: column;/*arranges items in a vertical */
+            justify-content: center;/*Centers items in a vertical */
+            position: relative;/*Sets the position relative to its normal position */
+            overflow: hidden;/*hides  content outside the section */
         }
 
         .welcome h1 {
-            font-family: 'IBM Plex Sans Arabic', sans-serif;
-            font-size: 43px;
-            line-height: 1.8;
-            margin: 18px 0;
-            color: var(--dark);
+            font-family: 'IBM Plex Sans Arabic', sans-serif;/*Sets the font */
+            font-size: 43px;/*Sets the heading size */
+            line-height: 1.8;/*Sets the space between lines */
+            color: var(--dark);/*Sets the text color */
         }
-
-        .welcome h1 span {
-            color: var(--pink);
-        }
-
-        .welcome p {
-            color: #80696c;
-            font-size: 14px;
-            line-height: 2.2;
-            max-width: 300px;
-        }
-
-        .decorative-line {
-            width: 65px;
-            height: 2px;
-            background: var(--pink);
-            margin: 25px 0;
-        }
-
+    
         .flower-mark {
-            position: absolute;
-            bottom: -65px;
-            left: -30px;
-            font-family: Georgia, serif;
-            font-size: 230px;
-            line-height: 1;
-            color: #d7b4b2;
-            opacity: 0.45;
-            pointer-events: none;
-        }
-
-        .welcome-small {
-            position: absolute;
-            bottom: 30px;
-            right: 40px;
-            font-size: 11px;
-            color: #927b7d;
-            letter-spacing: 1px;
+            position: absolute;/* position the flower inside welcome section section */
+            bottom: -65px;/* moves the flower down */
+            left: -30px;/* moves the flower to the left */
+            font-size: 230px;/*Sets the flower size */
+            line-height: 1;/*Sets the space between lines */
+            color: #d7b4b2;/*Sets the flower color */
+            opacity: 0.45;/*Sets the flower transparency */
         }
 
         /* Form side */
         .form-section {
-            padding: 45px 42px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 45px 42px; /*adds inner spacing */
+            display: flex;/*arranges items in a row */
+            flex-direction: column;/*arranges items in a vertical */
+            justify-content: center;/*Centers items in a vertical */
         }
 
         .form-heading {
-            margin-bottom: 25px;
+            margin-bottom: 25px;/*adds space below the heading */
         }
 
         .form-heading h2 {
-            font-size: 27px;
-            margin-bottom: 5px;
+            font-size: 27px;/*Sets the heading size */
         }
 
-        .form-heading p {
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 2;
-        }
 
         .form-tabs {
-            display: flex;
-            gap: 25px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 25px;
+            display: flex;/*arranges items in a row */
+            gap: 25px; /*adds space between the tabs */
+            margin-bottom: 25px;/*adds space below the tabs */
         }
 
         .tab {
-            padding: 0 0 12px;
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 600;
-            color: #aa9999;
-            border: none;
-            border-bottom: 2px solid transparent;
-            background: transparent;
-            cursor: pointer;
+            padding: 0 0 12px; /*adds inner spacing */
+            font-family: inherit;/*Sets the font */
+            font-size: 14px;/*Sets the text size */
+            font-weight: 600;/*Sets the text weight as bold */
+            color: #aa9999;/*Sets the text color */
+            border: none;  /*Removes the border */
+            border-bottom: 2px solid transparent;/*Removes the border */
+            background: transparent;/*Removes the background */
         }
-
+        
         .tab.active {
-            color: var(--pink);
-            border-bottom-color: var(--pink);
+            color: var(--pink);/*Sets the text color */
+            border-bottom-color: var(--pink);/*Sets the border color */
         }
 
         form {
-            display: flex;
-            flex-direction: column;
+            display: flex;/*arranges items in a row */
+            flex-direction: column; /*arranges items in a vertical */
         }
 
         .field {
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-            margin-bottom: 17px;
+            display: flex;/*arranges items in a row */
+            flex-direction: column;/*arranges items in a vertical */
+            gap: 7px;/*adds space between the fields */
+            margin-bottom: 17px;/*adds space below the fields */
         }
 
         .field label {
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 12px;/*Sets the label size */
+            font-weight: 600;/*Sets the label weight as bold */
         }
 
         .field input {
-            width: 100%;
-            padding: 13px 14px;
-            border: 1px solid var(--border);
-            border-radius: 9px;
-            background: #fdfbf9;
-            font-family: inherit;
-            font-size: 12px;
-            outline: none;
-            transition: border-color 0.3s;
+            width: 100%; /*Sets the input width to fill the container */
+            padding: 13px 14px;/*adds  space between the input */
+            border: 1px solid var(--border);/*Sets the border color */
+            border-radius: 9px;/*Sets the border radius */
+            background: #fdfbf9;/*Sets the background color */
+            font-family: inherit;  /*Sets the font */
+            outline: none;/*Removes the outline and help to make border pink */
+            font-size: 12px;/*Sets the font size */
+            
         }
-
+        
         .field input:focus {
-            border-color: var(--pink);
+            border-color: var(--pink);/*Sets the border color when the input is focused */
         }
 
         .field input::placeholder {
-            color: #b9a9a8;
+            color: #b9a9a8;/*Sets the placeholder color instead gray */
         }
 
-        .form-options {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 8px;
-            font-size: 11px;
-            margin: 0 0 22px;
+        .form-options {  
+            font-size: 11px;/*Sets the font size */
+            margin: 0 0 22px;/*Sets the margin */
         }
 
         .remember {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        display: flex;/*arranges items in a row */
+            align-items: center;/*Centers items in a vertical */
+            gap: 6px;/*adds space between the checkbox and the label */
         }
 
         .remember input {
-            accent-color: var(--pink);
+            accent-color: var(--pink);/*Sets the checkbox color */
         }
 
-        .text-link {
-            color: var(--pink);
-            text-decoration: none;
-        }
 
         .submit-btn {
-            padding: 13px;
-            border: none;
-            border-radius: 9px;
-            background: var(--pink);
-            color: white;
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.3s;
+            padding: 13px;/*adds inner spacing */
+            border: none;/*Removes the border */
+            border-radius: 9px;/*Sets the border radius */
+            background: var(--pink);/*Sets the background color */
+            color: white;/*Sets the text color */
+            font-family: inherit;/*Sets the font */
+            font-size: 14px;/*Sets the font size */
+            font-weight: 700;/*Sets the font weight */
         }
 
         .submit-btn:hover {
-            background: #985568;
+            background: #985568;/*Sets the background color when the button is hovered */
         }
-
-        .bottom-note {
-            text-align: center;
-            color: var(--muted);
-            font-size: 11px;
-            margin-top: 20px;
-
-        }
-
+        /*footer style*/
         footer {
             text-align: center;
             padding: 0 15px 20px;
@@ -270,54 +192,28 @@
             font-size: 11px;
         }
 
-        /* Mobile */
+        /* For Mobile */
         @media (max-width: 760px) {
-            .navbar {
-                padding: 17px 6%;
-            }
-
+        
             .container {
-                width: 91%;
-                grid-template-columns: 1fr;
+                width: 95%;/*Sets the width */
+                grid-template-columns: 1fr; /*Creates one column */
                 margin: 10px auto 25px;
-            }
-
-            .welcome {
-                padding: 30px 25px;
-                min-height: 240px;
             }
 
             .welcome h1 {
                 font-size: 32px;
-                line-height: 1.6;
-            }
-
-            .welcome p {
-                font-size: 12px;
             }
 
             .flower-mark {
                 font-size: 140px;
-                bottom: -45px;
-            }
-
-            .welcome-small {
-                display: none;
-            }
-
-            .form-section {
-                padding: 32px 24px;
-            }
-
-            .form-heading h2 {
-                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
     <header class="navbar">
-        <div class="logo">Flora</div>
+        <div class="logo">FLOR</div>
         <div class="nav-note"> فلورا | أناقةٌ لمُناسباتك ..</div>
     </header>
     <main class="container">
@@ -325,7 +221,9 @@
             <h1>
                 اخترنا الورد لنعبر عن شغفنا <br> ولنصنع لك تجربة تفوق الخيال<br>
             </h1>
-            <div class="flower-mark">✿✿✿</div>
+            <div class="flower-mark">
+                ✿✿✿✿
+            </div>
         </section>
         <section class="form-section">
             <div class="form-heading">
@@ -363,6 +261,7 @@
         <br>
         ❣ Made with LoVe by Floar Team ❣
     </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
