@@ -191,11 +191,13 @@ function checkout() {
 
     let total = 0;
 
-    cart.forEach(function(product) {
+cart.forEach(function(product) {
 
-        total += product.price * product.quantity;
+    total += product.price * product.quantity;
 
-    });
+});
+
+total = total - (total * discountRate);
 
     if (payment.value === "applepay") {
 
