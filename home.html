@@ -1,28 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flora | الرئيسية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+        /* Import Google font */
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap');
 
-        /* التنسيق العام للصفحة */
+        /* Reset default spacing */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* General page styling */
         body {
-            font-family: 'Tajawal', sans-serif; /* Font type */
+            font-family: 'Tajawal', sans-serif;
             background: #FDF9F5;
             color: #3e2222;
         }
 
-        /* تنسيق البنر الرئيسي */
+        /* Main banner */
         .hero {
             width: 100%;
             height: 350px;
@@ -35,6 +37,7 @@
             overflow: hidden;
         }
 
+        /* Banner content position */
         .hero-content {
             width: 40%;
             margin-right: auto;
@@ -42,6 +45,7 @@
             text-align: center;
         }
 
+        /* Flora logo */
         .hero-logo {
             font-family: Georgia, serif;
             font-size: clamp(55px, 8vw, 105px);
@@ -50,49 +54,54 @@
             margin-bottom: 12px;
         }
 
+        /* Banner subtitle */
         .hero-subtitle {
             font-size: clamp(17px, 2.3vw, 29px);
             color: #643E46;
             line-height: 1.6;
         }
 
-        /* تنسيق قسم تصنيفات الورود */
+        /* Categories section spacing */
         .categories {
             padding: 25px 6% 65px;
         }
 
+        /* Section heading */
         .section-heading {
             text-align: center;
             margin-bottom: 30px;
         }
 
+        /* Small heading text */
         .eyebrow {
             font-size: 11px;
             letter-spacing: 2px;
             color: #B65D72;
         }
 
+        /* Main section title */
         .section-heading h2 {
             font-size: 30px;
             font-weight: 500;
             margin: 12px 0;
         }
 
+        /* Decorative flower symbol */
         .flower-symbol {
             color: #B65D72;
             font-size: 20px;
         }
 
-        /* ترتيب بطاقات التصنيفات وتنسيق الصور */
+        /* Display category cards in three equal columns */
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(3,minmax(0, 1fr));
-            justify-content: center;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 25px;
             max-width: 1200px;
             margin: auto;
         }
 
+        /* Category card design */
         .category-card {
             background: white;
             border: 1px solid #f1e8e5;
@@ -101,13 +110,14 @@
             box-shadow: 0 4px 18px rgba(80, 45, 45, 0.04);
         }
 
+        /* Arched image container */
         .category-image {
             height: 360px;
-            width: 100%;
             overflow: hidden;
             border-radius: 50% 50% 0 0 / 50% 50% 0 0;
         }
 
+        /* Fit images without distortion */
         .category-image img {
             width: 100%;
             height: 100%;
@@ -115,26 +125,29 @@
             display: block;
         }
 
+        /* Category information */
         .category-info {
-            padding: 18px 18px 20px;
+            padding: 18px;
+            text-align: right;
         }
 
+        /* Category title */
         .category-info h3 {
             font-size: 18px;
             font-weight: 500;
             margin-bottom: 8px;
         }
 
+        /* Category description */
         .category-info p {
             font-size: 12px;
             color: #86716d;
             line-height: 1.9;
-            min-height: 46px;
         }
 
-        /* تنسيق أزرار الانتقال بين التصنيفات */
+        /* Circular navigation button */
         .arrow-btn {
-            display:flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             width: 34px;
@@ -145,23 +158,14 @@
             text-decoration: none;
             font-size: 19px;
             margin-top: 10px;
-            margin-right: 0;
         }
 
-        .category-info {
-            padding: 18px;
-            text-align: right;
-        }
-
-        .category-info p {
-            min-height: 0;
-        }
-
+        /* Arrow button hover effect */
         .arrow-btn:hover {
             background: #9D4C60;
         }
 
-        /* تنسيق الموقع على الشاشات الصغيرة */
+        /* Responsive layout for small screens */
         @media (max-width: 750px) {
             .hero {
                 height: 300px;
@@ -181,6 +185,7 @@
                 font-size: 16px;
             }
 
+            /* Display one card per row */
             .category-grid {
                 grid-template-columns: 1fr;
             }
@@ -190,7 +195,7 @@
             }
         }
 
-        /* تنسيق أسفل الصفحة */
+        /* Footer styling */
         footer {
             text-align: center;
             padding: 0 15px 20px;
@@ -198,7 +203,7 @@
             font-size: 11px;
         }
 
-        /* تنسيق الشريط العلوي */
+        /* Top promotion bar */
         .promo-bar {
             display: flex;
             align-items: center;
@@ -211,9 +216,8 @@
             gap: 20px;
         }
 
-        /* تنسيق السلة داخل دائرة */
+        /* Circular shopping cart button */
         .home-link {
-            position: static;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -229,19 +233,20 @@
             transition: 0.3s;
         }
 
+        /* Shopping cart hover effect */
         .home-link:hover {
             background-color: #ead7d7;
         }
 
-        /* تنسيق وحركة نص الخصم */
+        /* Promotion text container */
         .promo-text {
             flex: 1;
             min-width: 0;
             overflow: hidden;
             white-space: nowrap;
-            direction: ltr;
         }
 
+        /* Moving discount message */
         .promo-text span {
             display: inline-block;
             position: relative;
@@ -251,6 +256,7 @@
             animation: moveText 22s linear infinite;
         }
 
+        /* Move the promotion text from right to left */
         @keyframes moveText {
             from {
                 transform: translateX(0);
@@ -265,18 +271,18 @@
 
 <body>
 
-    <!-- الشريط العلوي: السلة وكود الخصم -->
+    <!-- Promotion bar and shopping cart -->
     <div class="promo-bar">
         <a class="home-link" href="cartt.html">🛒</a>
 
         <div class="promo-text">
-            <span>🌸 ITdept10 خصم 10% على جميع الباقات | استخدمي كود  🌸</span>
+            <span>🌸 ITdebt10 خصم 10% على جميع الباقات | استخدمي كود  🌸</span>
         </div>
     </div>
 
     <main>
 
-        <!-- البنر الرئيسي -->
+        <!-- Main banner -->
         <section class="hero">
             <div class="hero-content">
                 <h1 class="hero-logo">Flora</h1>
@@ -286,17 +292,20 @@
             </div>
         </section>
 
-        <!-- قسم تصنيفات الورود -->
+        <!-- Flower categories section -->
         <section class="categories">
+
+            <!-- Section heading -->
             <div class="section-heading">
                 <span class="eyebrow">تسوقي حسب التصنيف</span>
                 <h2>ورود لكل مناسبة</h2>
                 <span class="flower-symbol">&#10048;</span>
             </div>
 
+            <!-- Category cards grid -->
             <div class="category-grid">
 
-                <!-- تصنيف ورود بالجملة -->
+                <!-- Wholesale flowers category -->
                 <article class="category-card">
                     <div class="category-image">
                         <img src="images/bulk.jpg" alt="ورود بالجملة">
@@ -312,7 +321,7 @@
                     </div>
                 </article>
 
-                <!-- تصنيف باقات الورود -->
+                <!-- Flower bouquets category -->
                 <article class="category-card">
                     <div class="category-image">
                         <img src="images/bouquet.jpg" alt="باقات الورود">
@@ -328,7 +337,7 @@
                     </div>
                 </article>
 
-                <!-- تصنيف ورود مع هدايا -->
+                <!-- Flowers with gifts category -->
                 <article class="category-card">
                     <div class="category-image">
                         <img src="images/gifts.jpg" alt="ورود مع هدايا">
@@ -346,7 +355,7 @@
 
             </div>
 
-            <!-- حقوق النشر -->
+            <!-- Copyright and team credits -->
             <footer>
                 <br>
                 © 2026 فلورا. جميع الحقوق محفوظة.
@@ -357,6 +366,7 @@
         </section>
     </main>
 
+    <!-- External JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
