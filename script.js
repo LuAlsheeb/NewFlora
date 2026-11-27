@@ -1,6 +1,4 @@
-// Load Cart from Local Storage
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
 cart = cart.map(function(product) {
   return {
     ...product,
