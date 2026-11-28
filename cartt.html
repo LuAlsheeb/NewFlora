@@ -8,468 +8,439 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
 
-    <style>
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-           font-family: 'Tajawal', sans-serif; /* Font type */   
-     }
+* {
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    box-sizing: border-box; /* Includes padding and border in size */
+    font-family: 'Tajawal', sans-serif; /* Sets the font type */
+}
 
-        body {
-            background-color: #FDF9F5;
-            color: #55434A;
-            font-family: 'Tajawal', sans-serif; /* Font type */
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 50px auto;
-        }
-        .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 7%;
-    background: #fffdfa;
-    border-bottom: 1px solid #efe7e0;
+body {
+    background-color: #FDF9F5; /* Sets the background color */
+    color: #55434A; /* Sets the text color */
+    font-family: 'Tajawal', sans-serif; /* Sets the body font */
+}
+
+.container {
+    width: 90%; /* Sets container width */
+    max-width: 1200px; /* Sets maximum width */
+    margin: 50px auto; /* Centers the container */
+}
+
+.topbar {
+    display: flex; /* Uses flexbox layout */
+    justify-content: space-between; /* Adds space between items */
+    align-items: center; /* Aligns items vertically */
+    padding: 20px 7%; /* Adds inner spacing */
+    background: #fffdfa; /* Sets background color */
+    border-bottom: 1px solid #efe7e0; /* Adds bottom border */
 }
 
 .logo {
-  font-family: Georgia, serif;
-  font-size: 42px;
-  color: #9b6c75;
-  text-decoration: none;
+    font-family: Georgia, serif; /* Sets logo font */
+    font-size: 42px; /* Sets logo size */
+    color: #9b6c75; /* Sets logo color */
+    text-decoration: none; /* Removes underline */
 }
 
-        .page-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+.page-title {
+    text-align: center; /* Centers the text */
+    margin-bottom: 40px; /* Adds bottom spacing */
+}
 
-        .page-title h1 {
-            color: #B65D72;
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
+.page-title h1 {
+    color: #B65D72; /* Sets heading color */
+    font-size: 36px; /* Sets heading size */
+    margin-bottom: 12px; /* Adds bottom spacing */
+}
 
-        .page-title p {
-            color: #8A747B;
-            font-size: 16px;
-        }
+.page-title p {
+    color: #8A747B; /* Sets paragraph color */
+    font-size: 16px; /* Sets text size */
+}
 
-        .section-title {
-            color: #B65D72;
-            font-size: 23px;
-            margin: 35px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #F0D9DC;
-        }
+.section-title {
+    color: #B65D72; /* Sets title color */
+    font-size: 23px; /* Sets title size */
+    margin: 35px 0 20px; /* Adds outer spacing */
+    padding-bottom: 10px; /* Adds bottom padding */
+    border-bottom: 2px solid #F0D9DC; /* Adds bottom border */
+}
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
+.products-grid {
+    display: grid; /* Uses grid layout */
+    grid-template-columns: repeat(4, 1fr); /* Creates four columns */
+    gap: 20px; /* Adds space between items */
+}
 
-        .product-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(100, 60, 70, 0.08);
-            transition: 0.3s;
-            text-align: center;
-            padding: 20px;
-        }
+.product-card {
+    background: white; /* Sets card background */
+    border-radius: 15px; /* Rounds card corners */
+    overflow: hidden; /* Hides overflowing content */
+    box-shadow: 0 4px 15px rgba(100, 60, 70, 0.08); /* Adds shadow */
+    transition: 0.3s; /* Makes hover effect smooth */
+    text-align: center; /* Centers card content */
+    padding: 20px; /* Adds inner spacing */
+}
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 7px 20px rgba(78, 38, 49, 0.13);
-        }
+.product-card:hover {
+    transform: translateY(-5px); /* Moves card upward */
+    box-shadow: 0 7px 20px rgba(78, 38, 49, 0.13); /* Changes shadow on hover */
+}
 
-        .product-card img {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-            display: block;
-        }
+.product-card img {
+    width: 100%; /* Sets image width */
+    height: 210px; /* Sets image height */
+    object-fit: cover; /* Fits image inside its box */
+    display: block; /* Displays image as a block */
+}
 
-        .product-info {
-            padding: 16px;
-            text-align: center;
-        }
+.product-info {
+    padding: 16px; /* Adds inner spacing */
+    text-align: center; /* Centers product information */
+}
 
-        .product-info h3 {
-            font-size: 17px;
-            margin-bottom: 10px;
-            color: #55434A;
-        }
+.product-info h3 {
+    font-size: 17px; /* Sets product name size */
+    margin-bottom: 10px; /* Adds bottom spacing */
+    color: #55434A; /* Sets product name color */
+}
 
-        .price {
-            color: #B65D72;
-            font-weight: bold;
-            font-size: 17px;
-            margin-bottom: 15px;
-        }
+.price {
+    color: #B65D72; /* Sets price color */
+    font-weight: bold; /* Makes price bold */
+    font-size: 17px; /* Sets price size */
+    margin-bottom: 15px; /* Adds bottom spacing */
+}
 
-        .quantity {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 12px;
-        }
+.quantity {
+    display: flex; /* Uses flexbox layout */
+    justify-content: center; /* Centers quantity items */
+    align-items: center; /* Aligns items vertically */
+    gap: 15px; /* Adds space between items */
+    margin-bottom: 12px; /* Adds bottom spacing */
+}
 
-        .quantity button {
-            width: 30px;
-            height: 30px;
-            border: none;
-            border-radius: 50%;
-            background: #F8E9E8;
-            color: #B65D72;
-            font-size: 18px;
-            cursor: pointer;
-        }
+.quantity button {
+    width: 30px; /* Sets button width */
+    height: 30px; /* Sets button height */
+    border: none; /* Removes button border */
+    border-radius: 50%; /* Makes button circular */
+    background: #F8E9E8; /* Sets button background */
+    color: #B65D72; /* Sets button text color */
+    font-size: 18px; /* Sets button text size */
+    cursor: pointer; /* Changes cursor to pointer */
+}
 
-        .quantity span {
-            font-weight: bold;
-        }
+.quantity span {
+    font-weight: bold; /* Makes quantity bold */
+}
 
-        .remove-btn {
-            border: none;
-            background: transparent;
-            color: #A8777B;
-            cursor: pointer;
-            font-size: 13px;
-        }
+.remove-btn {
+    border: none; /* Removes button border */
+    background: transparent; /* Makes background transparent */
+    color: #A8777B; /* Sets button text color */
+    cursor: pointer; /* Changes cursor to pointer */
+    font-size: 13px; /* Sets text size */
+}
 
-        .empty-cart {
-            grid-column: 1 / -1;
-            text-align: center;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            color: #8A747B;
-        }
+.empty-cart {
+    grid-column: 1 / -1; /* Spans all grid columns */
+    text-align: center; /* Centers the text */
+    background: white; /* Sets background color */
+    padding: 40px; /* Adds inner spacing */
+    border-radius: 15px; /* Rounds corners */
+    color: #8A747B; /* Sets text color */
+}
 
-        .order-summary {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 45px;
-            box-shadow: 0 4px 15px rgba(100, 60, 70, 0.08);
-        }
+.order-summary {
+    background: white; /* Sets background color */
+    border-radius: 15px; /* Rounds corners */
+    padding: 25px; /* Adds inner spacing */
+    margin-top: 45px; /* Adds top spacing */
+    box-shadow: 0 4px 15px rgba(100, 60, 70, 0.08); /* Adds shadow */
+}
 
-        .order-summary h2 {
-            color: #B65D72;
-            margin-bottom: 20px;
-        }
+.order-summary h2 {
+    color: #B65D72; /* Sets heading color */
+    margin-bottom: 20px; /* Adds bottom spacing */
+}
 
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
+.summary-row {
+    display: flex; /* Uses flexbox layout */
+    justify-content: space-between; /* Separates items */
+    margin-bottom: 15px; /* Adds bottom spacing */
+    font-size: 16px; /* Sets text size */
+}
 
-        .coupon {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-        }
+.coupon {
+    display: flex; /* Uses flexbox layout */
+    flex-wrap: wrap; /* Allows items to wrap */
+    gap: 10px; /* Adds space between items */
+    margin: 20px 0; /* Adds outer spacing */
+}
 
-        .coupon input {
-            flex: 1;
-            min-width: 180px;
-            padding: 12px;
-            border: 1px solid #E8D5D7;
-            border-radius: 8px;
-            outline: none;
-        }
+.coupon input {
+    flex: 1; /* Fills available space */
+    min-width: 180px; /* Sets minimum width */
+    padding: 12px; /* Adds inner spacing */
+    border: 1px solid #E8D5D7; /* Adds input border */
+    border-radius: 8px; /* Rounds input corners */
+    outline: none; /* Removes default outline */
+}
 
-        .coupon button {
-            padding: 12px 25px;
-            background: #B65D72;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
+.coupon button {
+    padding: 12px 25px; /* Adds inner spacing */
+    background: #B65D72; /* Sets button background */
+    color: white; /* Sets text color */
+    border: none; /* Removes button border */
+    border-radius: 8px; /* Rounds button corners */
+    cursor: pointer; /* Changes cursor to pointer */
+}
 
-        .coupon small {
-            width: 100%;
-            color: #A8777B;
-            font-size: 12px;
-        }
+.coupon small {
+    width: 100%; /* Takes full width */
+    color: #A8777B; /* Sets text color */
+    font-size: 12px; /* Sets text size */
+}
 
-       .payment-box {
-            border: 1px solid #E8D5D7;
-            border-radius: 12px;
-            padding: 18px;
-            margin: 25px 0;
-            background: #FFFCFA;
-        }
+.payment-box {
+    border: 1px solid #E8D5D7; /* Adds box border */
+    border-radius: 12px; /* Rounds box corners */
+    padding: 18px; /* Adds inner spacing */
+    margin: 25px 0; /* Adds outer spacing */
+    background: #FFFCFA; /* Sets background color */
+}
 
-       .payment-box h3 {
-            color: #B65D72;
-            font-size: 17px;
-            margin-bottom: 15px;
-       }
+.payment-box h3 {
+    color: #B65D72; /* Sets heading color */
+    font-size: 17px; /* Sets heading size */
+    margin-bottom: 15px; /* Adds bottom spacing */
+}
 
-       .payment-option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border: 1px solid #E8D5D7;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            background: white;
-       }
+.payment-option {
+    display: flex; /* Uses flexbox layout */
+    align-items: center; /* Aligns items vertically */
+    gap: 12px; /* Adds space between items */
+    border: 1px solid #E8D5D7; /* Adds option border */
+    border-radius: 10px; /* Rounds corners */
+    padding: 15px; /* Adds inner spacing */
+    margin-bottom: 10px; /* Adds bottom spacing */
+    cursor: pointer; /* Changes cursor to pointer */
+    background: white; /* Sets background color */
+}
 
-       .payment-option:last-child {
-           margin-bottom: 0;
-       }
+.payment-option:last-child {
+    margin-bottom: 0; /* Removes last option spacing */
+}
 
-       .payment-option:has(input:checked) {
-           border: 1.5px solid #B65D72;
-           background: #FDF4F4;
-       }
+.payment-option:has(input:checked) {
+    border: 1.5px solid #B65D72; /* Highlights selected option */
+    background: #FDF4F4; /* Changes selected background */
+}
 
-      .payment-option input {
-           accent-color: #B65D72;
-           width: 17px;
-           height: 17px;
-           cursor: pointer;
-        }
+.payment-option input {
+    accent-color: #B65D72; /* Sets checkbox color */
+    width: 17px; /* Sets input width */
+    height: 17px; /* Sets input height */
+    cursor: pointer; /* Changes cursor to pointer */
+}
 
-        .apple-pay {
-            font-size: 19px;
-            color: #000;
-            direction: ltr;
-        }
+.apple-pay {
+    font-size: 19px; /* Sets Apple Pay text size */
+    color: #000; /* Sets text color */
+    direction: ltr; /* Sets left-to-right direction */
+}
 
-        .apple-pay strong {
-            font-weight: bold;
-            margin-right: 5px;
-        }
+.apple-pay strong {
+    font-weight: bold; /* Makes text bold */
+    margin-right: 5px; /* Adds right spacing */
+}
 
-        .total {
-            border-top: 1px solid #F0D9DC;
-            padding-top: 18px;
-            margin-top: 18px;
-            font-weight: bold;
-            font-size: 20px;
-            color: #B65D72;
-        }
+.total {
+    border-top: 1px solid #F0D9DC; /* Adds top border */
+    padding-top: 18px; /* Adds top padding */
+    margin-top: 18px; /* Adds top spacing */
+    font-weight: bold; /* Makes text bold */
+    font-size: 20px; /* Sets text size */
+    color: #B65D72; /* Sets total color */
+}
 
+.checkout-btn {
+    width: 100%; /* Takes full width */
+    padding: 15px; /* Adds inner spacing */
+    margin-top: 20px; /* Adds top spacing */
+    background: #B65D72; /* Sets button background */
+    color: white; /* Sets text color */
+    border: none; /* Removes border */
+    border-radius: 10px; /* Rounds corners */
+    font-size: 17px; /* Sets text size */
+    cursor: pointer; /* Changes cursor to pointer */
+}
 
-        .checkout-btn {
-            width: 100%;
-            padding: 15px;
-            margin-top: 20px;
-            background: #B65D72;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 17px;
-            cursor: pointer;
-        }
+.checkout-btn:hover {
+    background: #98485D; /* Changes color on hover */
+}
 
-        .checkout-btn:hover {
-            background: #98485D;
-        }
+footer {
+    text-align: center; /* Centers footer text */
+    padding: 30px 15px 20px; /* Adds inner spacing */
+    color: #a89591; /* Sets text color */
+    font-size: 11px; /* Sets text size */
+}
 
-        footer {
-            text-align: center;
-            padding: 30px 15px 20px;
-            color: #a89591;
-            font-size: 11px;
-        }
-
-        @media (max-width: 900px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .container {
-                width: 94%;
-                margin-top: 30px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .page-title h1 {
-                font-size: 28px;
-            }
-        }
-    .home-link {
-      font-size: 14px;
-      padding: 11px 18px;
-      border: 1px solid #e2c6c7;
-      border-radius: 40px;
-      text-decoration: none;
-      color:inherit;
+@media (max-width: 900px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* Changes to two columns */
     }
-    
-
-    .product-card {
-    background: #fffdfa;
-     border: 1px solid #efe7e0;
-    border-radius: 20px;
 }
 
+@media (max-width: 500px) {
+    .container {
+        width: 94%; /* Increases container width */
+        margin-top: 30px; /* Reduces top spacing */
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr; /* Changes to one column */
+    }
+
+    .page-title h1 {
+        font-size: 28px; /* Reduces heading size */
+    }
+}
+
+.home-link {
+    font-size: 14px; /* Sets link text size */
+    padding: 11px 18px; /* Adds inner spacing */
+    border: 1px solid #e2c6c7; /* Adds link border */
+    border-radius: 40px; /* Makes rounded link */
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits parent text color */
+}
+
+.product-card {
+    background: #fffdfa; /* Sets card background */
+    border: 1px solid #efe7e0; /* Adds card border */
+    border-radius: 20px; /* Rounds card corners */
+}
 
 #message {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
+    position: fixed; /* Keeps message in place */
+    top: 20px; /* Sets distance from top */
+    left: 50%; /* Moves message to center */
+    transform: translateX(-50%); /* Centers message horizontally */
+    z-index: 9999; /* Places message above other elements */
 
-    color: #9b6c75;
-    background-color: #fffdfa;
+    color: #9b6c75; /* Sets message text color */
+    background-color: #fffdfa; /* Sets message background */
 
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 16px; /* Sets text size */
+    font-weight: bold; /* Makes text bold */
 
-    padding: 12px 20px;
-    border-radius: 12px;
+    padding: 12px 20px; /* Adds inner spacing */
+    border-radius: 12px; /* Rounds message corners */
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Adds shadow */
 
-    text-align: center;
+    text-align: center; /* Centers message text */
 
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 0; /* Hides message initially */
+    transition: opacity 0.3s ease; /* Makes appearance smooth */
 }
 
- </style>
-
+</style>
 
 <body>
-<header class="topbar">
-  <a href="home.html" class="logo">Flora</a>
-  <a href="home.html" class="home-link">العودة للرئيسية ←</a>
+    
+    <!-- Header Section -->
+    <header class="topbar">
+        <a href="home.html" class="logo">Flora</a>
+        <a href="home.html" class="home-link">العودة للرئيسية ←</a>
     </header>
+
+    <!-- Notification Message -->
     <p id="message"></p>
-        <main class="container">
 
-        <!-- عنوان الصفحة -->
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Page Title -->
         <div class="page-title">
-
             <h1>سلة التسوق</h1>
-
             <p>تحقق من منتجاتك المختارة وقم بإتمام طلبك</p>
-
         </div>
 
-
-        <!-- المنتجات المختارة -->
-        <h2 class="section-title">
-             منتجاتك المختارة
-        </h2>
-
+        <!-- Selected Products -->
+        <h2 class="section-title">منتجاتك المختارة</h2>
         <div class="products-grid" id="cartItems">
-
-            <!-- JavaScript سيعرض المنتجات هنا -->
-
+            <!-- Products Display Area -->
         </div>
 
-
-        <!-- ملخص الطلب -->
+        <!-- Order Summary -->
         <div class="order-summary">
-
             <h2>ملخص الطلب</h2>
 
+            <!-- Subtotal -->
             <div class="summary-row">
-
                 <span>المجموع الفرعي</span>
-
                 <span id="subtotal">0 ر.س</span>
-
             </div>
 
-
+            <!-- Discount -->
             <div class="summary-row">
-
                 <span>الخصم</span>
-
                 <span id="discount">0 ر.س</span>
-
             </div>
 
-
-            <!-- كود الخصم -->
+            <!-- Coupon Section -->
             <div class="coupon">
-
-                <input
-                    type="text"
-                    id="couponCode"
-                    placeholder="أدخل كود الخصم"
-                >
-
-                <button type="button" onclick="applyCoupon()">
-                    تطبيق
-                </button>
-
-                <small>
-                   استخدمي ITdept10 واحصلي على خصم 10% على طلبك!
-                </small>
-
+                <input type="text" id="couponCode" placeholder="أدخل كود الخصم">
+                <button type="button" onclick="applyCoupon()">تطبيق</button>
+                <small>استخدمي ITdept10 واحصلي على خصم 10% على طلبك!</small>
                 <small id="couponMessage"></small>
             </div>
 
-            <!-- طريقة الدفع -->
+            <!-- Payment Methods -->
             <div class="payment-box">
+                <h3>طريقة الدفع</h3>
 
-            <h3>طريقة الدفع</h3>
+                <!-- Apple Pay Option -->
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="applepay" checked>
+                    <span class="apple-pay">
+                        <strong>Apple</strong>
+                        <span>Pay</span>
+                    </span>
+                </label>
 
-            <label class="payment-option">
-            <input type="radio" name="payment" value="applepay" checked>
-
-             <span class="apple-pay">
-              <strong> Apple</strong>
-              <span> Pay </span>
-             </span>
-            </label>
-
-            <label class="payment-option">
-            <input type="radio" name="payment" value="cash">
-
-            <span>الدفع عند الاستلام</span>
-            </label>
-
+                <!-- Cash on Delivery Option -->
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="cash">
+                    <span>الدفع عند الاستلام</span>
+                </label>
             </div>
 
-            <!-- الإجمالي -->
+            <!-- Total Amount -->
             <div class="summary-row total">
                 <span>الإجمالي</span>
                 <span id="total">0 ر.س</span>
             </div>
 
-            <button class="checkout-btn" onclick="checkout()">
-            إتمام الطلب
-           </button>
-           </div>
-         
+            <!-- Checkout Button -->
+            <button class="checkout-btn" onclick="checkout()">إتمام الطلب</button>
+        </div>
     </main>
-    <!-- Footer -->
+
+    <!-- Footer Section -->
     <footer>
         © 2026 فلورا. جميع الحقوق محفوظة.
         <br>
-        ❣  Made with LoVe by Flora Team ❣
+        ❣ Made with LoVe by Flora Team ❣
     </footer>
-    <!-- JavaScript -->
-    <script src="script.js"></script>
 
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
 </body>
 </html>
